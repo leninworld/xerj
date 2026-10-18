@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `xerj autoindex --help` now states the existing `--bulk-mb` maximum of 24.
+
 - `xerj_map` applies index-name globs before its 100-dataset response cap, so
   unrelated larger datasets cannot hide a matching catalog entry.
 
