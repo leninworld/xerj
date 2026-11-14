@@ -1,0 +1,33 @@
+name: Validate hybrid guidance 3016 G0 ARM
+on:
+  push:
+    branches: [codex/validate-hybrid-guidance-3016-g0-arm-i2]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: validate-hybrid-guidance-3016-g0-arm-i2
+  cancel-in-progress: false
+jobs:
+  baseline:
+    if: github.run_attempt == 1 && github.actor == 'leninworld'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: One reviewed baseline attempt
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 validation/xerj3016-g0/hosted.py
+      - name: Reviewed synthetic baseline evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: xerj3016-g0-arm-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/xerj3016-g0-${{ github.run_id }}/public-evidence
+            ${{ runner.temp }}/xerj3016-g0-${{ github.run_id }}/public-evidence-minimal
+          if-no-files-found: error
+          retention-days: 7
