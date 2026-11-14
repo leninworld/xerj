@@ -1,0 +1,24 @@
+{
+  "state": "STATIC_SCOPED_REQUEST_PATH_PARITY_ACCEPTED_NOT_RUNTIME_PASS",
+  "currentSource": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+  "currentTree": "d7d2c322edd4f9cf29fc480231c9086ee3e297a6",
+  "releaseTag": "v1.0.0-rc.102",
+  "releaseCommit": "cfdea42205816052cf4b5aaf4b395739f32c948b",
+  "changedEnginePaths": [
+    "engine/crates/xerj-api/src/authz.rs",
+    "engine/crates/xerj-api/src/router.rs",
+    "engine/crates/xerj-api/tests/bulk_accepts_put.rs"
+  ],
+  "rootAcceptanceSHA256": "a8a31bbaa020f8ae3f7e115ca2360f816436931d3bda707e3c2582651d5bfb1a",
+  "scope": "Production authz unchanged; router adds PUTbulk only. G0 exercises existing POSTbulk, creation,refresh andsearch. Allotherenginepaths identical. No full-main/current-new-PUT API/quality equivalence claim.",
+  "archive": {
+    "name": "xerj-1.0.0-rc.102-aarch64-unknown-linux-musl.tar.gz",
+    "bytes": 33666646,
+    "nodeId": "RA_kwDOTJJATc4q6b19",
+    "checksumBytes": 118,
+    "checksumNodeId": "RA_kwDOTJJATc4q6b2t",
+    "hashKnownBeforeDownload": false
+  },
+  "runtimeAttemptsConsumed": 0,
+  "oldClosedAPIAndHealthScopesRemainClosed": true
+}
