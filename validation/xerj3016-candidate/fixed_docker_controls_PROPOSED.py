@@ -36,7 +36,7 @@ class Controls:
         assert config['namespace'] == f"xerj3016-{config['actualRunID']}-{config['runNonce']}"
         assert os.environ.get('GITHUB_RUN_ID') == config['actualRunID']
         assert os.environ.get('GITHUB_RUN_ATTEMPT') == '1'
-        assert config['runtimeAttempt'] == 3 and config['runtimeBefore'] == 2
+        assert config['runtimeAttempt'] == 4 and config['runtimeBefore'] == 3
         assert re.fullmatch(r'(?:python@)?sha256:[0-9a-f]{64}', config['image'])
         assert re.fullmatch(r'sha256:[0-9a-f]{64}', config['imageID'])
         if config['image'].startswith('sha256:'):

@@ -1369,7 +1369,7 @@ def run(config,root,private,guard):
     """Code-complete private proposal: future exact Docker admission only."""
     require(config.get('executionApproved')is True and config.get('rootAgreement')is True and
             config.get('explicitAdditionalCandidateAttemptApproved')is True,'NO_EXECUTION_AUTHORITY')
-    require(config['ordinaryConsumed']==2 and config['runtimeAttempt']==3,'EXACT_ADDITIONAL_CANDIDATE_ATTEMPT3')
+    require(config['ordinaryConsumed']==2 and config['runtimeAttempt']==4,'EXACT_ADDITIONAL_CANDIDATE_ATTEMPT4')
     require(config['cpuLimit']==2 and config['memoryLimitBytes']==8*1024**3 and
             config['maxFTXSeconds']==1200,'EXACT_RESOURCE_LIMITS')
     config['_approvedCaps']=approved_caps(config)

@@ -3,8 +3,8 @@
   "mode": "FIXED_INTERNAL_PROXY_WITH_SOURCE_OPTOUT",
   "claudeApproved": true,
   "rootAgreement": true,
-  "actualVerdictSHA256": "46ff6741945ef6f0b89f567d21a6f24a435864d65b3c6dc588313f3d04c97dc2",
-  "implementationSHA256": "25fc450beafea88f2587b478f1964ae8e177ae644a7d6e216b2aeced8a49982c",
+  "actualVerdictSHA256": "919d8ca13446473cdc4baa2e1cb1de7dc79132e1b714dde1359ba094c9e3a924",
+  "implementationSHA256": "157690d1f1539fe66e5eca8f622d49903a7ab2591bf0d84b953f2c3093fbf4d5",
   "evidenceCaps": {
     "mode": "FULL_PROTOCOL_PROPOSED_CAPS_V1",
     "privateRecords": 4096,

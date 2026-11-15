@@ -456,7 +456,8 @@ def fixtures(image, label):
         assert helper_result['identity']['globalRunNumberPositives']==['1','2','101']and len(helper_result['identity']['negativeControls'])==11
         assert helper_result['artifact_decode']['actual_zip_cases']==10 and helper_result['artifact_decode']['actual_export_manifest_cases']==5 and helper_result['artifact_decode']['all_passed']is True
         full_reader=helper_result['artifact_decode']['ftx_semantic_cases']['fullPipelineCases']
-        assert len(full_reader)==5 and all(r['accepted']==r['expectedAccepted']for r in full_reader)
+        expected_full=PLAN['fixture_controls']['full_pipeline_cases']
+        assert len(full_reader)==len(expected_full)==46 and {r['id']:r['expectedAccepted']for r in full_reader}==expected_full and all(r['accepted']==r['expectedAccepted']for r in full_reader)
         result['input_identity'] = helper_result['input_identity']
         result['image'] = image
         expected = 'BOOTSTRAP_HARNESS_ONLY_NOT_PRODUCT' if label=='fixture-bootstrap' else 'EXACT_TARGET_REPEAT'
@@ -627,14 +628,16 @@ def main():
     global FIXED_SESSION,FIXED_EARLY_RESULT,FIXED_FINAL_RESULT
     # Human read is enforced BEFORE public push by the private exact-manifest seal;
     # public planning fields stay false to avoid self-referential attestations/mutations.
-    limit(PLAN['runtime_attempt']==3 and PLAN['ordinary_consumed_before']==2 and PLAN['runtime_consumed_before']==2 and PLAN['prior_explicit_exceptions_consumed']==0 and PLAN['explicit_additional_candidate_attempt_approved'] is True and PLAN['ordinary_limit']==2,'EXPLICIT_ADDITIONAL_CANDIDATE_ATTEMPT_AND_H1_REQUIRED_NO_RESET')
+    limit(PLAN['runtime_attempt']==4 and PLAN['ordinary_consumed_before']==2 and PLAN['runtime_consumed_before']==3 and PLAN['prior_explicit_exceptions_consumed']==1 and PLAN['explicit_additional_candidate_attempt_approved'] is True and PLAN['ordinary_limit']==2,'EXPLICIT_ADDITIONAL_CANDIDATE_ATTEMPT_AND_H1_REQUIRED_NO_RESET')
     limit(RUN.isdigit()and int(RUN)>0,'RUN_NAMESPACE_REQUIRED')
     ROOT.mkdir(exist_ok=False);OUT.mkdir();PRIVATE.mkdir(mode=0o700)
     result={'status':'INCOMPLETE','full_validation':False};START=time.time()
-    save(OUT/'host-admission.json',{'state':'IDENTITY_NOT_YET_ADMITTED','runtimeAttempt':3,'priorRuntimeAttempts':2})
+    save(OUT/'host-admission.json',{'state':'IDENTITY_NOT_YET_ADMITTED','runtimeAttempt':4,'priorRuntimeAttempts':3})
     try:
         limit(PLAN['execution_enabled']is True and PLAN['provenance_closed']is True and PLAN['capacity_probe_authorized']is True,'DISABLED_PENDING_EXACT_WHOLE_EXECUTION_APPROVAL')
-        for n,digest in PLAN['files'].items():limit(hashlib.sha256((P/n).read_bytes()).hexdigest()==digest,'PAYLOAD_HASH')
+        for n,digest in PLAN['files'].items():
+            selected=Path(os.environ['GITHUB_WORKSPACE'])/PLAN['workflow_published_path'] if n=='validate.yml' else P/n
+            limit(selected.is_file()and not selected.is_symlink()and hashlib.sha256(selected.read_bytes()).hexdigest()==digest,'PAYLOAD_HASH')
         workflow=Path(os.environ['GITHUB_WORKSPACE'])/PLAN['workflow_published_path']
         limit(workflow.is_file()and not workflow.is_symlink()and hashlib.sha256(workflow.read_bytes()).hexdigest()==PLAN['workflow_sha256'],'WORKFLOW_BYTES')
         identity_guards.environment(os.environ,PLAN)
@@ -646,7 +649,7 @@ def main():
         START=workflow_clock();END=START+3480;SOFT=START+3000
         githead=run('packet-head',['git','-C',str(P),'rev-parse','HEAD'],seconds=10,cap=65536).decode().strip();limit(githead==os.environ['GITHUB_SHA'],'EXACT_PACKET_HEAD')
         save(OUT/'packet-input-identity.json',{'packetCommit':githead,'workflowSHA256':PLAN['workflow_sha256'],'planSHA256':hashlib.sha256((P/'plan.json').read_bytes()).hexdigest(),'files':PLAN['files'],'sourceProvenanceSHA256':hashlib.sha256((P/'source-provenance.json').read_bytes()).hexdigest()})
-        save(ROOT/'attempt-ledger.json',{'workflowOrigin':START,'target':SOFT,'hard':END,'runtimeAttempt':3,'ordinaryLimit':2,'priorConsumed':2,'proposedAdditionalException':1,'noRetry':True,'earlierClosedAPIStagesUnchanged':True})
+        save(ROOT/'attempt-ledger.json',{'workflowOrigin':START,'target':SOFT,'hard':END,'runtimeAttempt':4,'ordinaryLimit':2,'priorConsumed':3,'proposedAdditionalException':1,'noRetry':True,'earlierClosedAPIStagesUnchanged':True})
         memory={k:int(v)*1024 for k,v in re.findall(r'^(MemTotal|MemAvailable):\s+(\d+)',Path('/proc/meminfo').read_text(),re.M)}
         limit(memory['MemTotal']>=12*1024**3 and memory['MemAvailable']>=10*1024**3,'ACTUAL_HOST_MEMORY_ADMISSION')
         cgroups=finite_host_limits();limit(len(os.sched_getaffinity(0))>=2,'ACTUAL_TWO_CPU_ADMISSION')
@@ -711,7 +714,7 @@ def main():
         result.update(ownedStops=stops,stopVerified=all(stops.values())and fixed_stops,
            fixedEarlyStopProof=(FIXED_EARLY_RESULT or {}).get('ownedStops',{}),
            fixedFTXStopProof=(FIXED_FINAL_RESULT or {}).get('ownedStops',{}),
-           workflowSeconds=time.time()-START,runtimeAttempt=3,priorRuntimeConsumed=2,rawNodeLogUploaded=False,containersDeleted=False)
+           workflowSeconds=time.time()-START,runtimeAttempt=4,priorRuntimeConsumed=3,rawNodeLogUploaded=False,containersDeleted=False)
         save(OUT/'hosted-result.json',result)
         try:collect_fixed_evidence()
         except BaseException as exc:
