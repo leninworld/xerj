@@ -1,0 +1,41 @@
+{
+  "closed": true,
+  "target": {
+    "image": "python@sha256:6b8555b2ad1d98bac702ce5bf226c41566408d87efde45b19cbdef9f36fcc998",
+    "config_digest": "sha256:9c4998120c916e3438dd11651703063becb98ad417225babd24ab6663e9358b2",
+    "compressed_layer_bytes": 370959426,
+    "verified_policy_allows_missing_rate_headers": true,
+    "closed": true,
+    "blockers": [],
+    "media_type": "application/vnd.oci.image.manifest.v1+json",
+    "python_version": "3.12.16",
+    "official_Dockerfile": "docker-library/python@3d7e95597e56a415d9e4abc0f15877e005d2cb2e:3.12/bookworm/Dockerfile",
+    "historical_digest_config_binding": "repo-info@813f8e2e84e96e1e63ecf69bd0fcddded5e7f611:repos/python/remote/3.12-bookworm.md",
+    "media_type_evidence": {
+      "retained_manifest": "co_create/20261107/next-route-after-openclaw/xerj3019-hosted-route/static-closure/registry-pinned-metadata.json",
+      "JSON_field": "mediaType",
+      "retained_receipt": "co_create/20261107/next-route-after-openclaw/xerj3019-hosted-route/static-closure/registry-pinned-receipt.json",
+      "header": "Content-Type",
+      "actual_value": "application/vnd.oci.image.manifest.v1+json",
+      "original_raw_response_sha256": "6b8555b2ad1d98bac702ce5bf226c41566408d87efde45b19cbdef9f36fcc998",
+      "no_new_request": true
+    }
+  },
+  "bootstrap": {
+    "image": "python@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1",
+    "config_digest": "sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9",
+    "verified_policy_allows_missing_rate_headers": true,
+    "closed": true,
+    "observed_old_cache_logical_bytes": 43551160,
+    "observed_old_cache_Python": "3.12.15",
+    "observed_old_cache_platform": "linux/arm64",
+    "blockers": [],
+    "media_type": "application/vnd.oci.image.index.v1+json",
+    "arm64_manifest_digest": "sha256:16bf2b5c59a08523519d3c8589deca849285dee1d62a3653e124c3dba340f15e",
+    "compressed_layer_bytes": 43533362,
+    "python_version": "3.12.15",
+    "official_Dockerfile": "docker-library/python@2a3b794c223ab067d122719541cdd54a068732a5:3.12/slim-trixie/Dockerfile",
+    "historical_digest_config_binding": "repo-info@1080259f82617f4d7f86ac8f537f69a8564daa05:repos/python/remote/3.12-slim-trixie.md"
+  },
+  "pull_policy": "Official docker/docs@16e452c8eaea26cec842cbf1065037fb2015001f pulls.md:100anonymous pulls/6h/IP;HEADdoesnotcount;missingheadersmaymeanpublisher/providerexemption. Runtime2pulls/HEAD>=4margin whenpresent; failonactualpullerror/no retry; IPcanvary."
+}

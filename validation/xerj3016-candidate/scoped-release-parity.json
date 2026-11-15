@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-14T23:32:52.267483+00:00",
+  "state": "SIX_SCOPED_CACHED_TAG_TREE_IDENTITIES_MATCH_ALREADY_ADMITTED_MAIN_SOURCE",
+  "method": "Two actual local Git metadata commands; show-ref --verify then ls-tree -rl tag restricted6paths; both exit0. GIT_NO_LAZY_FETCH=1 and secondGIT_TERMINAL_PROMPT=0; no fetch/network/subprocessprojectexecution/newsourcebodies",
+  "cachedTagRef": "refs/tags/v1.0.0-rc.102",
+  "tagRefOID": "cfdea42205816052cf4b5aaf4b395739f32c948b",
+  "rows": [
+    {
+      "path": "engine/crates/xerj-common/src/corpus_feedback.rs",
+      "gitOID": "d4d6967e0fa348f315b7c7cba296a337cd4257b9",
+      "bytes": 22656,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    },
+    {
+      "path": "engine/crates/xerj-common/src/feedback.rs",
+      "gitOID": "c4a354c918be654821597ae7d4856268543a364f",
+      "bytes": 10372,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    },
+    {
+      "path": "engine/crates/xerj-common/src/hub.rs",
+      "gitOID": "5fafeadbc3a3450c2c9c680f1ba0ef029aaef653",
+      "bytes": 25782,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    },
+    {
+      "path": "engine/crates/xerj-hub/src/feedback.rs",
+      "gitOID": "531bb6ae7a16b7e0a32269d8d431c8283f52c9bf",
+      "bytes": 18914,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    },
+    {
+      "path": "engine/crates/xerj-mcp/src/hub.rs",
+      "gitOID": "9f1b25992de831a240806b83ea684b500eb74c41",
+      "bytes": 27346,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    },
+    {
+      "path": "engine/crates/xerj-server/src/main.rs",
+      "gitOID": "3a978131909b8e71ad05fb57802424f9b57dc927",
+      "bytes": 284102,
+      "mode": "100644",
+      "sameAsAdmittedSource": true
+    }
+  ],
+  "qualification": "Scoped cached tag tree parity only, not live tag freshness, reproducible binary build attestation, whole tag tree/source parity, runtime optout observation or permission. Existing release binary/hash controls remain mandatory.",
+  "newSourceBodies": 0,
+  "newAPICalls": 0,
+  "runtimeAttemptsAdded": 0,
+  "derivedFromRetainedReceiptSHA256": "4d5a19b335b5a0b9665f34ea5963716e32658cdb7c97bf4a846e4b2e933925d7"
+}

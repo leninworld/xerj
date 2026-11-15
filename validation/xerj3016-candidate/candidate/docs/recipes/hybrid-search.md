@@ -1,0 +1,413 @@
+# Hybrid search: keyword + vector in one query
+
+## The problem
+
+You run a help-desk search box. A user types **"reset password"**. Two
+things are true at once:
+
+- The best answer might share **no keywords** with the query. An article
+  titled *"Regain entry to a locked-out account"* is exactly what they
+  need, but BM25 never sees it — there's no lexical overlap.
+- A keyword-exact article might be **off-topic**. *"Password complexity
+  and rotation policy"* contains "password," so BM25 loves it, but a
+  semantic ranker knows it's about policy, not recovery.
+
+Keyword search (BM25) is precise on exact terms and useless on synonyms.
+Vector search (kNN) captures meaning but drops exact-term matches whose
+embeddings drift. The usual "fix" is to run **two systems** — a lexical
+engine and a vector DB — then stitch and re-rank the results in your
+application. That's two deployments, two writes on every ingest, and a
+fusion step you have to build and maintain yourself.
+
+## Why XERJ
+
+XERJ indexes the text field and the `dense_vector` field in the **same
+index**, and fuses BM25 and kNN in a **single `hybrid` query**. One
+request goes out, one ranked list comes back — already fused with
+Reciprocal Rank Fusion (RRF). No second datastore, no client-side
+re-ranking.
+
+## The solution
+
+### 1. One index, two modalities
+
+A `text` field for BM25 and a `dense_vector` field for kNN:
+
+```json
+PUT /helpdesk
+{
+  "mappings": {
+    "properties": {
+      "title": { "type": "text" },
+      "vec":   { "type": "dense_vector", "dims": 4, "similarity": "cosine" }
+    }
+  }
+}
+```
+
+> The vectors in this recipe are hand-authored 4-dim *topic* vectors so
+> the demo is deterministic and you can see exactly why each result
+> ranks where it does. In production you fill `vec` with a real embedding
+> model — or skip the vectors entirely and use a `semantic_text` field,
+> which auto-embeds on ingest. (XERJ's built-in embedder is lexical, good
+> for demos and keyword-semantic overlap; point `inference_id` at an
+> external `/v1/embeddings` endpoint for neural-quality vectors.)
+
+### 2. The corpus
+
+Each doc has a title (for BM25) and a topic vector (for kNN). Topic axes
+are `[auth_recovery, security_policy, cooking, generic]`:
+
+| id | title | vector | keyword "password"? | near query vector? |
+|----|-------|--------|:--:|:--:|
+| d1 | Reset your password | `[1.00, 0.15, 0, 0.10]` | yes | yes |
+| d2 | Regain entry to a locked-out account | `[0.95, 0.10, 0, 0.15]` | **no** | yes |
+| d3 | Password complexity and rotation policy | `[0.15, 1.00, 0, 0.10]` | yes | **no** |
+| d4 | How to bake sourdough bread | `[0.00, 0.00, 1.0, 0.10]` | no | no |
+| d5 | Change your account password | `[0.85, 0.25, 0, 0.20]` | yes | yes |
+
+The user's intent in both modalities: text `"reset password"`, vector
+`[1.0, 0.20, 0.0, 0.10]` (an "auth recovery" direction).
+
+### 3. Watch each modality fail on its own
+
+**Pure BM25** — `{"match": {"title": "reset password"}}`:
+
+```
+d1  score=2.2742  Reset your password
+d5  score=0.5784  Change your account password
+d3  score=0.5300  Password complexity and rotation policy
+```
+
+It **misses d2** entirely — "Regain entry to a locked-out account" has no
+shared keywords, so it can never be a BM25 hit.
+
+**Pure kNN** — `{"knn": {"field": "vec", "query_vector": [...], "k": 3}}`,
+showing the 3 nearest:
+
+```
+d1  score=0.9994  Reset your password
+d2  score=0.9971  Regain entry to a locked-out account
+d5  score=0.9942  Change your account password
+```
+
+It surfaces d2 (great!) but **misses d3** — the password-policy article's
+topic vector points at "security_policy," far from the query, so it falls
+below the top-3 cutoff.
+
+### 4. Hybrid recovers both — one query
+
+```json
+POST /helpdesk/_search
+{
+  "size": 5,
+  "query": {
+    "hybrid": {
+      "queries": [
+        { "query": { "match": { "title": "reset password" } }, "weight": 1.0 },
+        { "query": { "knn": { "field": "vec",
+                              "query_vector": [1.0, 0.2, 0.0, 0.1],
+                              "k": 3 } }, "weight": 1.0 }
+      ],
+      "fusion": "rrf"
+    }
+  }
+}
+```
+
+Real response (trimmed to `title`, printed verbatim by the script):
+
+```json
+{
+  "hits": {
+    "total": { "value": 4, "relation": "eq" },
+    "max_score": 0.03279,
+    "hits": [
+      { "_id": "d1", "_score": 0.03279, "_source": { "title": "Reset your password" } },
+      { "_id": "d5", "_score": 0.032, "_source": { "title": "Change your account password" } },
+      { "_id": "d2", "_score": 0.01613, "_source": { "title": "Regain entry to a locked-out account" } },
+      { "_id": "d3", "_score": 0.01587, "_source": { "title": "Password complexity and rotation policy" } }
+    ]
+  }
+}
+```
+
+**d2** (only kNN found it) and **d3** (only BM25 found it) are now *both*
+on the page, and **d1** — the doc that matched on *both* keyword and
+vector — is still ranked #1. Watch **d5**: BM25 ranks it #2 and kNN
+ranks it #3 — first in neither — yet because *both* signals agree on it,
+fusion keeps it at **#2**, ahead of d2 and d3, each of which only one
+modality found. That's the whole point: fusion rewards agreement between the
+two signals while still admitting the strong single-signal hits that
+either method alone would have dropped.
+
+Only **four** docs come back, not five: d4 ("How to bake sourdough
+bread") is in *neither* sub-query's result set — it shares no keywords
+and its topic vector falls outside the kNN `k:3` cutoff — so RRF never
+sees it. Fusion ranks the *union* of the sub-query hits, nothing more.
+
+## How the fusion works
+
+`"fusion": "rrf"` uses Reciprocal Rank Fusion: each sub-query contributes
+`weight / (k + rank)` for a doc (default `k = 60`, `rank` is 1-based),
+summed across sub-queries. It ranks by *position*, not raw score, so
+BM25's `0.5`–`2.3` scores and kNN's `~0.99` cosines never have to be
+normalized onto a common scale — a persistent headache when you fuse two
+systems yourself. The scores above fall straight out of this formula:
+
+- **d1** is rank 1 in *both* lists → `1/(60+1) + 1/(60+1) = 0.03279`.
+- **d5** is rank 2 in the BM25 list and rank 3 in the kNN list →
+  `1/62 + 1/63 = 0.03200`, still beating either single-list hit because
+  two contributions stack.
+- **d2** is rank 2 in the kNN list only → `1/(60+2) = 0.01613`.
+- **d3** is rank 3 in the BM25 list only → `1/(60+3) = 0.01587`.
+
+Other `fusion` options:
+
+- `"rrf"` or `{"type": "rrf", "k": 40}` — rank-based, the safe default.
+- `"linear"` — weighted sum of the raw sub-query scores (use `weight` to
+  tilt toward keyword or vector; requires comparable score scales).
+
+Per-query `weight` lets you bias the blend, e.g. `1.5` on the `match`
+sub-query to favor exact terms.
+
+## Choose kNN alone or a fusion configuration
+
+The existing weights and fusion constant are controls to evaluate, not a reason to prefer hybrid on every corpus. Start by checking each input list.
+
+Fusion only reorders the union of its input hits. If a relevant document is missing from every leg, fix retrieval or the embeddings before tuning fusion.
+
+The following requests reuse this recipe's five documents and query vector. Each request goes to POST /helpdesk/_search. The weights 2 and 0.5 and fusion constant 7 are synthetic arithmetic examples, not recommended production settings. They demonstrate the controls, not retrieval quality.
+
+### kNN only
+
+```json
+{
+  "size": 5,
+  "query": {
+    "knn": {
+      "field": "vec",
+      "query_vector": [
+        1.0,
+        0.2,
+        0.0,
+        0.1
+      ],
+      "k": 3
+    }
+  }
+}
+```
+
+### Equal-weight RRF
+
+```json
+{
+  "size": 5,
+  "query": {
+    "hybrid": {
+      "queries": [
+        {
+          "query": {
+            "match": {
+              "title": "reset password"
+            }
+          },
+          "weight": 1.0
+        },
+        {
+          "query": {
+            "knn": {
+              "field": "vec",
+              "query_vector": [
+                1.0,
+                0.2,
+                0.0,
+                0.1
+              ],
+              "k": 3
+            }
+          },
+          "weight": 1.0
+        }
+      ],
+      "fusion": "rrf"
+    }
+  }
+}
+```
+
+### Weighted RRF
+
+```json
+{
+  "size": 5,
+  "query": {
+    "hybrid": {
+      "queries": [
+        {
+          "query": {
+            "match": {
+              "title": "reset password"
+            }
+          },
+          "weight": 2.0
+        },
+        {
+          "query": {
+            "knn": {
+              "field": "vec",
+              "query_vector": [
+                1.0,
+                0.2,
+                0.0,
+                0.1
+              ],
+              "k": 3
+            }
+          },
+          "weight": 0.5
+        }
+      ],
+      "fusion": "rrf"
+    }
+  }
+}
+```
+
+### Custom RRF constant
+
+```json
+{
+  "size": 5,
+  "query": {
+    "hybrid": {
+      "queries": [
+        {
+          "query": {
+            "match": {
+              "title": "reset password"
+            }
+          },
+          "weight": 2.0
+        },
+        {
+          "query": {
+            "knn": {
+              "field": "vec",
+              "query_vector": [
+                1.0,
+                0.2,
+                0.0,
+                0.1
+              ],
+              "k": 3
+            }
+          },
+          "weight": 0.5
+        }
+      ],
+      "fusion": {
+        "type": "rrf",
+        "k": 7
+      }
+    }
+  }
+}
+```
+
+### Keep the controls distinct
+
+The k inside the knn clause limits that leg's neighbor pool. The k inside the fusion object is the RRF rank constant. The response size controls the final page. These settings do different jobs.
+
+In RRF, a larger weight increases one leg's contribution. A smaller fusion constant gives early ranks more influence relative to deeper ranks. Neither change creates new input hits. A zero weight contributes zero, but a hit returned only by that leg can remain in the union with a zero fused score.
+
+### Choose on tuning data, report on held-out data
+
+1. Prepare representative queries with relevance judgments. Split them into tuning and held-out sets before choosing any settings.
+2. Keep the corpus, judgments, embedder and its version, dimensions, filters, candidate windows and final result cutoff fixed across the four arms. Use the same query vector for each vector-backed request. Record the embedding mode; the lexical default is not a neural model.
+3. On the tuning set, compare kNN alone, equal-weight RRF, weighted RRF and RRF with a custom constant. Choose weights and the constant there, not on the held-out set. Keep the other controls fixed when isolating a weight or constant change.
+4. Evaluate the chosen configurations on the untouched held-out set. Report a relevance metric suited to the task, empty-result rates and relevant documents missing from each leg. Include per-query regressions and uncertainty, not only an average.
+5. Measure latency and cost under the same workload and hardware conditions. Record query time, embedding costs and resource use. A relevance gain may not justify its operational cost.
+
+Prefer kNN alone when it meets your relevance and operational requirements and lexical fusion adds irrelevant hits. Evaluate fusion when lexical hits recover relevant exact terms that the vector leg misses. If the evidence is inconclusive, do not assume the extra configuration helps.
+
+The synthetic corpus above checks request behavior and RRF arithmetic only. It does not select production weights, establish a quality winner, or justify changing the default. The published quality measurements are tied to their stated datasets, embedder and release.
+
+Read the [embedding selection caveats](https://xerj.org/answers/do-search-embeddings-help) and the [dated hybrid quality measurements](https://xerj.org/answers/hybrid-search-quality-measured-ndcg) before applying those results to your data.
+
+## Reproduce it yourself
+
+No dependencies beyond the Python 3 standard library — no pip install, no
+API keys, no external service. Point it at a running XERJ:
+
+```bash
+# 1. start a throwaway XERJ (insecure, local data dir) on the default port 9200
+xerj --insecure --data-dir /tmp/xerj-hybrid \
+     --config <(printf '[server]\nes_compat_port = 9200\n')
+
+# 2. in another shell, run the example (defaults to http://localhost:9200)
+python3 docs/examples/hybrid-search/hybrid_search.py
+```
+
+The script reads its target from `XERJ_URL` (default
+`http://localhost:9200`); the legacy `BASE` alias still works. To hit a
+server on another port:
+
+```bash
+XERJ_URL=http://localhost:9485 python3 docs/examples/hybrid-search/hybrid_search.py
+```
+
+Expected tail (verified live):
+
+```
+--- assertions ---
+PASS  BM25 alone MISSES d2 (locked-out account: no shared keywords)
+PASS  kNN alone MISSES d3 (password policy: topic vector too far)
+PASS  Hybrid surfaces BOTH d2 and d3 in a single query
+PASS  d1 (keyword + vector match) still ranks #1 under fusion
+
+BM25 ids  : ['d1', 'd5', 'd3']
+kNN  ids  : ['d1', 'd2', 'd5']
+Hybrid ids: ['d1', 'd5', 'd2', 'd3']
+
+OK
+```
+
+The four assertions, the scores and all three id lists are
+deterministic: the same request returns the same page on every run and
+after a restart. That holds for tied scores too — see the note on ties
+below.
+
+## Notes & limits
+
+- **`knn` in a query scores every doc that has the field**, ranked by
+  cosine; `size` (or `from`+`size`) is the cutoff the user sees. So `k:3`
+  plus `size:3` means "show the 3 nearest." For a hard candidate cap
+  independent of `size`, keep `k` small — it's carried on the sub-query.
+- **Score scales differ by fusion.** RRF returns small fused scores
+  (`0.016–0.033` here) — compare docs *within* a response, not against
+  BM25/cosine absolutes.
+- **Tied fused scores are ordered by arrival.** Under RRF ties are
+  common: a document found only by one leg at rank *r* and a document
+  found only by the other leg at rank *r* score exactly the same
+  (`1/(k+r)` each), and so do two documents at swapped ranks (1,2) and
+  (2,1). XERJ orders a tie the way it orders every score-ranked page:
+  fused `_score` descending, then the order the documents were indexed
+  (`_seq_no`, the ES `_doc` order), then `_id`. The page is the same on
+  every run and after a restart, whether the documents are still in
+  memory or already flushed, so `from`/`size` paging does not skip or
+  repeat a document at a page boundary, and listing the legs in another
+  order does not reorder an equal-weight request. Before
+  [#940](https://github.com/xerj-org/xerj/issues/940) a tie followed
+  hash-map iteration order, which changed from one process to the next.
+  Before [#3017](https://github.com/xerj-org/xerj/issues/3017) the same
+  held one level down: a `knn` leg served from the HNSW graph returned
+  equally similar neighbours in graph order, and the graph differs between
+  the indexing process, a restart and a second node, so RRF positions (and
+  the fused scores built from them) could change. Every kNN executor now
+  ranks its neighbours in the same score, `_seq_no`, `_id` order.
+- **Vector quality is your embeddings' job.** This recipe supplies
+  vectors directly for a deterministic demo. For real semantic recall,
+  generate `dense_vector` values with a production embedding model, or
+  use a `semantic_text` field with an external `inference_id`.

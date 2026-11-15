@@ -1,0 +1,134 @@
+{
+  "state": "EXACT_CORPUS_AND_QUESTIONS_BOUND_FOR_REVIEW_NOT_EXECUTED",
+  "at": "2026-11-14T16:02:06.524794+00:00",
+  "logicalSourceCount": 113,
+  "cumulativeSourceBytes": 9038238,
+  "noNewSourceBodiesOrSourceCredit": true,
+  "corpus": [
+    {
+      "source": "corpus://engine/crates/xerj-engine/src/index.rs",
+      "corpusDestination": "engine/crates/xerj-engine/src/index.rs",
+      "bytes": 3120037,
+      "sha256": "98342b82a18d3068c85f522e303f4583c74d8c28d0aa24f4542181b924c619a7",
+      "GitOID": "fb5bbf8f219204d7eddadb178d360bcfb4133a6e",
+      "mode": "100644",
+      "sourcePin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "alreadyAdmitted": true,
+      "newLogicalRead": false
+    },
+    {
+      "source": "corpus://engine/crates/xerj-autoindex/src/gain.rs",
+      "corpusDestination": "engine/crates/xerj-autoindex/src/gain.rs",
+      "bytes": 22934,
+      "sha256": "ba594527194367dc44d86a3229fd56d386b433c28940446e571515345f345b79",
+      "GitOID": "330482db3066d39200c7273470f38e9ea42bdb64",
+      "mode": "100644",
+      "sourcePin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "alreadyAdmitted": true,
+      "newLogicalRead": false
+    },
+    {
+      "source": "corpus://docs/research/llms-txt-2026-09/README.md",
+      "corpusDestination": "docs/research/llms-txt-2026-09/README.md",
+      "bytes": 26403,
+      "sha256": "6a923b44f9d1ac84c2e9e4d2aaef4f9c04d2d2d4f69789137f9ececb1480c997",
+      "GitOID": "216dc92d9045157ab104ad0f8d2522fb8c93644d",
+      "mode": "100644",
+      "sourcePin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "alreadyAdmitted": true,
+      "newLogicalRead": false
+    },
+    {
+      "source": "corpus://landing/docs/recipes/hybrid-search.html",
+      "corpusDestination": "landing/docs/recipes/hybrid-search.html",
+      "bytes": 42103,
+      "sha256": "1d76d4375a539b53b24843ec26bc4afef72f1259c279a4d97cac8b66247a058f",
+      "GitOID": "2cc40e49344ab658a8336c3c2eb281a7b177176b",
+      "mode": "100644",
+      "sourcePin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "alreadyAdmitted": true,
+      "newLogicalRead": false
+    },
+    {
+      "source": "corpus://docs/recipes/hybrid-search.md",
+      "corpusDestination": "docs/recipes/hybrid-search.md",
+      "bytes": 10138,
+      "sha256": "34b06d0eb662a31c4128f9b50fc09895a51075bef423cd84625f675adf93ba62",
+      "GitOID": "ddb51f1b381734d1e138bc00164a2ffa41d780b4",
+      "mode": "100644",
+      "sourcePin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "alreadyAdmitted": true,
+      "newLogicalRead": false
+    }
+  ],
+  "totalBytes": 3221615,
+  "maxBytes": 5242880,
+  "beforeAfterData": "Use EXACT same immutable baselinecorpus bothstates. Only exact reviewed prospective llms/guide knowledge artifact changes betweenstates, never corpus or questions. Rust+Markdown+HTML realpublicmixedfolder, no inventedrequiredPDF/JSONL/extractor/model.",
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "How are lexical and vector search combined with Reciprocal Rank Fusion?",
+      "grounding": [
+        "docs/recipes/hybrid-search.md#Why XERJ",
+        "engine/crates/xerj-engine/src/index.rs fusion units"
+      ],
+      "minimumEvidence": "A returned passage or explicit zero-hit; do not invent semantic retrieval merely because question paraphrases source."
+    },
+    {
+      "id": "Q2",
+      "text": "What does xerj gain count from the audit log?",
+      "grounding": [
+        "engine/crates/xerj-autoindex/src/gain.rs:1-26,267-320"
+      ],
+      "minimumEvidence": "Counted actual searches/latency/hitrate, not causal token/time savings."
+    },
+    {
+      "id": "Q3",
+      "text": "What happens to a password recovery article with no shared keywords?",
+      "grounding": [
+        "docs/recipes/hybrid-search.md:5-28,55-92"
+      ],
+      "minimumEvidence": "Recipe exact d2 example; record lexical misses, do not repairquestion."
+    },
+    {
+      "id": "Q4",
+      "text": "Which entry surfaces must remain complete for an agent without a terminal?",
+      "grounding": [
+        "docs/research/llms-txt-2026-09/README.md:230-253"
+      ],
+      "minimumEvidence": "Shell/MCP-only/HTTP-only completeness and beforafterharness; reportactualhit."
+    },
+    {
+      "id": "Q5",
+      "text": "How can a hybrid query weight its lexical and nearest-neighbor legs?",
+      "grounding": [
+        "docs/recipes/hybrid-search.md:96-110",
+        "engine/crates/xerj-engine/src/index.rs actualfusion"
+      ],
+      "minimumEvidence": "Actual weight fields in fixed baseline recipe; no changeddefaultqualityclaim."
+    }
+  ],
+  "questionPolicy": "Fixed five natural-language questions, no reranking/selection after results. Actual map/schema discovery may determine field/index bindings from productoutput only. Failure/zerohit is kept; expectedknowledge is not injected into persona. TokenA/B uses these same5 irrespectivehitquality.",
+  "minimalRealDependencyRoute": {
+    "reuse": "ExactI2 officialrc102ARM64staticbinary, actual verifiedarchive110a848\u2026 and signedAPTinstalledPython/curl/toolchain/image; no newpip/model/onnx/browserframework. Currentmcp/autoindex/common/rootmain paths are source-identical releasecfdea\u219250e4 (prioractualmetadata proof).",
+    "container": "Reuse I2 actual validation Docker2CPU/8GiB, same no-swap/cpuset/read-only/writableownedmount/resource/deadline/stopguards. Before/after nodes sequential; peakone. Currentcapacitynotinferredfrompriorruntime.",
+    "oneClient": "One stdlibftx_replay.py proposed: finite child stdin/stdout JSON-RPC matchingid plus urllib HTTP; same primitive capturesrawrequest/response transcripts. If real CLI requestwire needed, one transparent stdlibThreadingHTTPServer loopbackforwarder with no stubresponses/semanticchanges, routeonlyownedrealnode. Forwarder logs rawPOSTbytes and actual upstreamstatus/body; denyexternalhosts/mutationfeedbackpaths; preserve productheaders/path/body; actualrequestorigin recorded separatelyfromauditedquerycount.",
+    "commandEvidence": "Officialstaticbinary --version/--help; freshnode --insecure --data-dir; autoindex frozen5files; status; init --url --disable-feedback; launchgeneratedabsoluteMCPconfig withfeedbackdisabled; initialize/initialized/toolslist/search/map/plan; realSPA/knowledge/catalog/search/_ask; nativeauditbeforeafter andgain--json; 5fixedquestionwire/tokenAB. No externalmodel/tokenizer needed for stated4B/tokenconversion.",
+    "remainUnproven": "Actualautoindexformatdispatch on5filecorpus, catalogschema, nodeRSS/indexwall, advertisedHubkey/pack, exactprospectivedocserving/installer-equivalence and real transparentforwarder correctness must be adjudicated/exercised inside ONEwholecandidateexecutionroute; no staticfullPASS."
+  },
+  "remainingGate": "Samewholecandidateexecutionreview approves concreteclient+commandmanifest/transcriptlosscriteria/incrementalbudget, no separatetinyreadreview. Hub onlyifactualtoolslistadvertises and verifiedpack/keyclosure available, elseconditionalcoverageexplicitlyqualified; neverfakePASS/dropninepaths.",
+  "actions": {
+    "API": 0,
+    "model": 0,
+    "projectRuntime": 0,
+    "helperExecution": 0,
+    "productEdit": 0,
+    "newSourceBody": 0
+  },
+  "historicalSourceCounterScope": "logicalSourceCount113/cumulativeSourceBytes9038238 are this dataset-binding creation snapshot at16:02UTC, before the separately approved CLI-entry body. They are NOT current candidate counts or credits.",
+  "currentCandidateSourceAccounting": {
+    "logical": 114,
+    "bytes": 9322340,
+    "noResetOrNewBody": true
+  }
+}

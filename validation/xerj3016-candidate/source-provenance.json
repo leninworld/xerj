@@ -1,0 +1,54 @@
+{
+  "state": "STATIC_SCOPED_REQUEST_PATH_PARITY_ACCEPTED_NOT_RUNTIME_PASS",
+  "currentSource": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+  "currentTree": "d7d2c322edd4f9cf29fc480231c9086ee3e297a6",
+  "releaseTag": "v1.0.0-rc.102",
+  "releaseCommit": "cfdea42205816052cf4b5aaf4b395739f32c948b",
+  "changedEnginePaths": [
+    "engine/crates/xerj-api/src/authz.rs",
+    "engine/crates/xerj-api/src/router.rs",
+    "engine/crates/xerj-api/tests/bulk_accepts_put.rs"
+  ],
+  "rootAcceptanceSHA256": "a8a31bbaa020f8ae3f7e115ca2360f816436931d3bda707e3c2582651d5bfb1a",
+  "scope": "Production authz unchanged; router adds PUTbulk only. G0 exercises existing POSTbulk, creation,refresh andsearch. Allotherenginepaths identical. No full-main/current-new-PUT API/quality equivalence claim.",
+  "archive": {
+    "name": "xerj-1.0.0-rc.102-aarch64-unknown-linux-musl.tar.gz",
+    "bytes": 33666646,
+    "nodeId": "RA_kwDOTJJATc4q6b19",
+    "checksumBytes": 118,
+    "checksumNodeId": "RA_kwDOTJJATc4q6b2t",
+    "hashKnownBeforeDownload": true,
+    "verifiedSHA256": "110a848f556c3a8e776be800ed668485b8ca95d42310c431ae208352b4af05b5",
+    "hashKnownFrom": "ActualI2 verified asset/checksum retained; current candidate has no new download."
+  },
+  "runtimeAttemptsConsumed": 2,
+  "oldClosedAPIAndHealthScopesRemainClosed": true,
+  "priorG0Qualification": "I1 workflow succeeded but fullAPTclosure rejected. I2 run43605832615 actualaccepted narrow baseline: all28checks+4mechanics/completeAPT3, not candidate or fullFTX. Twoordinary consumed; no runtime or validationpass transferred to candidate3.",
+  "actualCLIEntry": {
+    "path": "engine/crates/xerj-server/src/main.rs",
+    "gitBlobOID": "3a978131909b8e71ad05fb57802424f9b57dc927",
+    "bytes": 284102,
+    "sha256": "3c9d273f56c5b8b10f1b4fc409d779278a0aa2e34c293181636236854c54f40b",
+    "currentPin": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+    "releasePin": "cfdea42205816052cf4b5aaf4b395739f32c948b",
+    "oneFileParityOnly": true,
+    "siblingsDependenciesAndBuildFeaturesNotProvenByThisFile": true
+  },
+  "wrongHistoricalCLIPathIsNotParityProof": true,
+  "historicalI1Snapshot": {
+    "runtimeAttemptsConsumed": 1,
+    "priorG0Qualification": "Attempt1 workflowSUCCESS but completeAPTclosureNOTaccepted; no priorvalidationPASS transfer",
+    "archiveHashKnownBeforeFirstDownload": false
+  },
+  "currentFullProtocolAuthoring": {
+    "sourceCount": 120,
+    "sourceBytes": 9444700,
+    "sourceScopes": "Prior114plusalreadyapprovedHub/installer/privacydependencies; no newbodyinthisauthoring",
+    "runtimeConsumedBefore": 2,
+    "attempt3Approved": false,
+    "read1Fact": false,
+    "read2Fact": false,
+    "fullFTXOrCandidatePassClaim": false,
+    "oldScopedParityAndI1I2EvidencePreserved": true
+  }
+}

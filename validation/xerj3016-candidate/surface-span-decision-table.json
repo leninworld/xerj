@@ -1,0 +1,4519 @@
+{
+  "schema_version": 1,
+  "state": "PRIVATE_STATIC_PREREGISTRATION_NOT_EXECUTED_OR_EXECUTION_APPROVED",
+  "scope": "C1/C2 identical action decision table for deterministic scripted first-session replay; full nine-path validation scope unchanged.",
+  "baseline_commit": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+  "candidate_patch_sha256": "bde545cb347ebf62e43cd4f29194fb9918679bf5a364b86cb7478b9cb7ca371b",
+  "approval_verdict": {
+    "path": "retained-evidence://co_create/20261114/xerj3016-shellless-FTX-finish-feasibility/whole-design-authoring-review/response.json",
+    "sha256": "b2542742cfadf16e9653f84daf4aee8ea209c2c9f0a2bf469c2c0f8067f09a35",
+    "scope": "private authoring only, C1-C7; no runtime/API/model/publication grant"
+  },
+  "surfaces": {
+    "baseline": {
+      "llms": {
+        "path": "offered://baseline/landing/llms.txt",
+        "repository_path": "landing/llms.txt",
+        "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+        "bytes": 88792,
+        "line_count": 408,
+        "offered": true,
+        "format": "plain_text",
+        "knowledge_hop": 0
+      },
+      "llms_full": {
+        "path": "offered://baseline/landing/llms-full.txt",
+        "repository_path": "landing/llms-full.txt",
+        "sha256": "7b648eeae1599c9e2fd0d1303aed00c49c0c13b714561f051195ae7d5fee20a2",
+        "bytes": 132787,
+        "line_count": 1879,
+        "offered": true,
+        "format": "plain_text",
+        "knowledge_hop": 1
+      },
+      "recipe": {
+        "path": "corpus://landing/docs/recipes/hybrid-search.html",
+        "repository_path": "landing/docs/recipes/hybrid-search.html",
+        "sha256": "1d76d4375a539b53b24843ec26bc4afef72f1259c279a4d97cac8b66247a058f",
+        "bytes": 42103,
+        "line_count": 499,
+        "offered": true,
+        "format": "html",
+        "knowledge_hop": 1,
+        "offered_text_mapping": [
+          {
+            "start_line": 229,
+            "end_line": 229,
+            "start_column": 50,
+            "decoded_text": "XERJ"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 43,
+            "decoded_text": "DOCS"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 69,
+            "decoded_text": "\u00b7"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 102,
+            "decoded_text": "RECIPES"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 131,
+            "decoded_text": "\u00b7"
+          },
+          {
+            "start_line": 231,
+            "end_line": 232,
+            "start_column": 139,
+            "decoded_text": "HYBRID SEARCH\n    "
+          },
+          {
+            "start_line": 233,
+            "end_line": 235,
+            "start_column": 127,
+            "decoded_text": "\n      PDF\n    "
+          },
+          {
+            "start_line": 237,
+            "end_line": 237,
+            "start_column": 28,
+            "decoded_text": "RECIPE \u00b7 06"
+          },
+          {
+            "start_line": 238,
+            "end_line": 238,
+            "start_column": 6,
+            "decoded_text": "Hybrid search"
+          },
+          {
+            "start_line": 241,
+            "end_line": 241,
+            "start_column": 6,
+            "decoded_text": "The problem"
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 5,
+            "decoded_text": "You run a help-desk search box. A user types "
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 58,
+            "decoded_text": "\"reset password\""
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 83,
+            "decoded_text": ". Two things are true at once:"
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 8,
+            "decoded_text": "The best answer might share "
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 44,
+            "decoded_text": "no keywords"
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 64,
+            "decoded_text": " with the query. An article titled "
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 103,
+            "decoded_text": "\"Regain entry to a locked-out account\""
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 146,
+            "decoded_text": " is exactly what they need, but BM25 never sees it \u2014 there's no lexical overlap."
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 8,
+            "decoded_text": "A keyword-exact article might be "
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 49,
+            "decoded_text": "off-topic"
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 67,
+            "decoded_text": ". "
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 73,
+            "decoded_text": "\"Password complexity and rotation policy\""
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 119,
+            "decoded_text": " contains \"password,\" so BM25 loves it, but a semantic ranker knows it's about policy, not recovery."
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 5,
+            "decoded_text": "Keyword search (BM25) is precise on exact terms and useless on synonyms. Vector search (kNN) captures meaning but drops exact-term matches whose embeddings drift. The usual \"fix\" is to run "
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 202,
+            "decoded_text": "two systems"
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 222,
+            "decoded_text": " \u2014 a lexical engine and a vector DB \u2014 then stitch and re-rank the results in your application. That's two deployments, two writes on every ingest, and a fusion step you have to build and maintain yourself."
+          },
+          {
+            "start_line": 249,
+            "end_line": 249,
+            "start_column": 6,
+            "decoded_text": "Why XERJ"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 5,
+            "decoded_text": "XERJ indexes the text field and the "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 62,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 81,
+            "decoded_text": " field in the "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 103,
+            "decoded_text": "same index"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 122,
+            "decoded_text": ", and fuses BM25 and kNN in a "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 160,
+            "decoded_text": "single "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 188,
+            "decoded_text": "hybrid"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 201,
+            "decoded_text": " query"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 216,
+            "decoded_text": ". One request goes out, one ranked list comes back \u2014 already fused with Reciprocal Rank Fusion (RRF). No second datastore, no client-side re-ranking."
+          },
+          {
+            "start_line": 252,
+            "end_line": 252,
+            "start_column": 6,
+            "decoded_text": "The solution"
+          },
+          {
+            "start_line": 254,
+            "end_line": 254,
+            "start_column": 6,
+            "decoded_text": "1. One index, two modalities"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 5,
+            "decoded_text": "A "
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 28,
+            "decoded_text": "text"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 39,
+            "decoded_text": " field for BM25 and a "
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 82,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 101,
+            "decoded_text": " field for kNN:"
+          },
+          {
+            "start_line": 256,
+            "end_line": 264,
+            "start_column": 18,
+            "decoded_text": "PUT /helpdesk\n{\n  \"mappings\": {\n    \"properties\": {\n      \"title\": { \"type\": \"text\" },\n      \"vec\":   { \"type\": \"dense_vector\", \"dims\": 4, \"similarity\": \"cosine\" }\n    }\n  }\n}"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 5,
+            "decoded_text": "The vectors in this recipe are hand-authored 4-dim "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 60,
+            "decoded_text": "topic"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 70,
+            "decoded_text": " vectors so the demo is deterministic and you can see exactly why each result ranks where it does. In production you fill "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 213,
+            "decoded_text": "vec"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 223,
+            "decoded_text": " with a real embedding model \u2014 or skip the vectors entirely and use a "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 314,
+            "decoded_text": "semantic_text"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 334,
+            "decoded_text": " field, which auto-embeds on ingest. (XERJ's built-in embedder is lexical, good for demos and keyword-semantic overlap; point "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 481,
+            "decoded_text": "inference_id"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 500,
+            "decoded_text": " at an external "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 537,
+            "decoded_text": "/v1/embeddings"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 558,
+            "decoded_text": " endpoint for neural-quality vectors.)"
+          },
+          {
+            "start_line": 267,
+            "end_line": 267,
+            "start_column": 6,
+            "decoded_text": "2. The corpus"
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 5,
+            "decoded_text": "Each doc has a title (for BM25) and a topic vector (for kNN). Topic axes are "
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 103,
+            "decoded_text": "[auth_recovery, security_policy, cooking, generic]"
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 160,
+            "decoded_text": ":"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 14,
+            "decoded_text": "id"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 25,
+            "decoded_text": "title"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 39,
+            "decoded_text": "vector"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 54,
+            "decoded_text": "keyword \"password\"?"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 82,
+            "decoded_text": "near query vector?"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 14,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 25,
+            "decoded_text": "Reset your password"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 74,
+            "decoded_text": "[1.00, 0.15, 0, 0.10]"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 111,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 123,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 14,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 25,
+            "decoded_text": "Regain entry to a locked-out account"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 91,
+            "decoded_text": "[0.95, 0.10, 0, 0.15]"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 136,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 156,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 14,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 25,
+            "decoded_text": "Password complexity and rotation policy"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 94,
+            "decoded_text": "[0.15, 1.00, 0, 0.10]"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 131,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 151,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 14,
+            "decoded_text": "d4"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 25,
+            "decoded_text": "How to bake sourdough bread"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 82,
+            "decoded_text": "[0.00, 0.00, 1.0, 0.10]"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 121,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 132,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 14,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 25,
+            "decoded_text": "Change your account password"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 83,
+            "decoded_text": "[0.85, 0.25, 0, 0.20]"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 120,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 132,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 5,
+            "decoded_text": "The user's intent in both modalities: text "
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 69,
+            "decoded_text": "\"reset password\""
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 92,
+            "decoded_text": ", vector "
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 122,
+            "decoded_text": "[1.0, 0.20, 0.0, 0.10]"
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 151,
+            "decoded_text": " (an \"auth recovery\" direction)."
+          },
+          {
+            "start_line": 283,
+            "end_line": 283,
+            "start_column": 6,
+            "decoded_text": "3. Watch each modality fail on its own"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 13,
+            "decoded_text": "Pure BM25"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 31,
+            "decoded_text": " \u2014 "
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 55,
+            "decoded_text": "{\"match\": {\"title\": \"reset password\"}}"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 100,
+            "decoded_text": ":"
+          },
+          {
+            "start_line": 285,
+            "end_line": 287,
+            "start_column": 18,
+            "decoded_text": "d1  score=2.2742  Reset your password\nd5  score=0.5784  Change your account password\nd3  score=0.5300  Password complexity and rotation policy"
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 5,
+            "decoded_text": "It "
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 16,
+            "decoded_text": "misses d2"
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 34,
+            "decoded_text": " entirely \u2014 \"Regain entry to a locked-out account\" has no shared keywords, so it can never be a BM25 hit."
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 13,
+            "decoded_text": "Pure kNN"
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 30,
+            "decoded_text": " \u2014 "
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 54,
+            "decoded_text": "{\"knn\": {\"field\": \"vec\", \"query_vector\": [...], \"k\": 3}}"
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 117,
+            "decoded_text": ", showing the 3 nearest:"
+          },
+          {
+            "start_line": 290,
+            "end_line": 292,
+            "start_column": 18,
+            "decoded_text": "d1  score=0.9994  Reset your password\nd2  score=0.9971  Regain entry to a locked-out account\nd5  score=0.9942  Change your account password"
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 5,
+            "decoded_text": "It surfaces d2 (great!) but "
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 41,
+            "decoded_text": "misses d3"
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 59,
+            "decoded_text": " \u2014 the password-policy article's topic vector points at \"security_policy,\" far from the query, so it falls below the top-3 cutoff."
+          },
+          {
+            "start_line": 295,
+            "end_line": 295,
+            "start_column": 6,
+            "decoded_text": "4. Hybrid recovers both \u2014 one query"
+          },
+          {
+            "start_line": 296,
+            "end_line": 310,
+            "start_column": 18,
+            "decoded_text": "POST /helpdesk/_search\n{\n  \"size\": 5,\n  \"query\": {\n    \"hybrid\": {\n      \"queries\": [\n        { \"query\": { \"match\": { \"title\": \"reset password\" } }, \"weight\": 1.0 },\n        { \"query\": { \"knn\": { \"field\": \"vec\",\n                              \"query_vector\": [1.0, 0.2, 0.0, 0.1],\n                              \"k\": 3 } }, \"weight\": 1.0 }\n      ],\n      \"fusion\": \"rrf\"\n    }\n  }\n}"
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 5,
+            "decoded_text": "Real response (trimmed to "
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 52,
+            "decoded_text": "title"
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 64,
+            "decoded_text": ", printed verbatim by the script):"
+          },
+          {
+            "start_line": 312,
+            "end_line": 323,
+            "start_column": 18,
+            "decoded_text": "{\n  \"hits\": {\n    \"total\": { \"value\": 4, \"relation\": \"eq\" },\n    \"max_score\": 0.03279,\n    \"hits\": [\n      { \"_id\": \"d1\", \"_score\": 0.03279, \"_source\": { \"title\": \"Reset your password\" } },\n      { \"_id\": \"d5\", \"_score\": 0.032, \"_source\": { \"title\": \"Change your account password\" } },\n      { \"_id\": \"d2\", \"_score\": 0.01613, \"_source\": { \"title\": \"Regain entry to a locked-out account\" } },\n      { \"_id\": \"d3\", \"_score\": 0.01587, \"_source\": { \"title\": \"Password complexity and rotation policy\" } }\n    ]\n  }\n}"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 13,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 24,
+            "decoded_text": " (only kNN found it) and "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 57,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 68,
+            "decoded_text": " (only BM25 found it) are now "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 102,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 111,
+            "decoded_text": " on the page, and "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 137,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 148,
+            "decoded_text": " \u2014 the doc that matched on "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 179,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 188,
+            "decoded_text": " keyword and vector \u2014 is still ranked #1. Watch "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 244,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 255,
+            "decoded_text": ": BM25 ranks it #2 and kNN ranks it #3 \u2014 first in neither \u2014 yet because "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 331,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 340,
+            "decoded_text": " signals agree on it, fusion keeps it at "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 389,
+            "decoded_text": "#2"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 400,
+            "decoded_text": ", ahead of d2 and d3, each of which only one modality found. That's the whole point: fusion rewards agreement between the two signals while still admitting the strong single-signal hits that either method alone would have dropped."
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 5,
+            "decoded_text": "Only "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 18,
+            "decoded_text": "four"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 31,
+            "decoded_text": " docs come back, not five: d4 (\"How to bake sourdough bread\") is in "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 103,
+            "decoded_text": "neither"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 115,
+            "decoded_text": " sub-query's result set \u2014 it shares no keywords and its topic vector falls outside the kNN "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 227,
+            "decoded_text": "k:3"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 237,
+            "decoded_text": " cutoff \u2014 so RRF never sees it. Fusion ranks the "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 290,
+            "decoded_text": "union"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 300,
+            "decoded_text": " of the sub-query hits, nothing more."
+          },
+          {
+            "start_line": 327,
+            "end_line": 327,
+            "start_column": 6,
+            "decoded_text": "How the fusion works"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 26,
+            "decoded_text": "\"fusion\": \"rrf\""
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 48,
+            "decoded_text": " uses Reciprocal Rank Fusion: each sub-query contributes "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 126,
+            "decoded_text": "weight / (k + rank)"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 152,
+            "decoded_text": " for a doc (default "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 193,
+            "decoded_text": "k = 60"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 206,
+            "decoded_text": ", "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 229,
+            "decoded_text": "rank"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 240,
+            "decoded_text": " is 1-based), summed across sub-queries. It ranks by "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 297,
+            "decoded_text": "position"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 310,
+            "decoded_text": ", not raw score, so BM25's "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 358,
+            "decoded_text": "0.5"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 368,
+            "decoded_text": "\u2013"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 390,
+            "decoded_text": "2.3"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 400,
+            "decoded_text": " scores and kNN's "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 439,
+            "decoded_text": "~0.99"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 451,
+            "decoded_text": " cosines never have to be normalized onto a common scale \u2014 a persistent headache when you fuse two systems yourself. The scores above fall straight out of this formula:"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 16,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 27,
+            "decoded_text": " is rank 1 in "
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 45,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 54,
+            "decoded_text": " lists \u2192 "
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 84,
+            "decoded_text": "1/(60+1) + 1/(60+1) = 0.03279"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 120,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 16,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 27,
+            "decoded_text": " is rank 2 in the BM25 list and rank 3 in the kNN list \u2192 "
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 105,
+            "decoded_text": "1/62 + 1/63 = 0.03200"
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 133,
+            "decoded_text": ", still beating either single-list hit because two contributions stack."
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 16,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 27,
+            "decoded_text": " is rank 2 in the kNN list only \u2192 "
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 82,
+            "decoded_text": "1/(60+2) = 0.01613"
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 107,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 16,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 27,
+            "decoded_text": " is rank 3 in the BM25 list only \u2192 "
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 83,
+            "decoded_text": "1/(60+3) = 0.01587"
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 108,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 5,
+            "decoded_text": "Other "
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 32,
+            "decoded_text": "fusion"
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 45,
+            "decoded_text": " options:"
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 29,
+            "decoded_text": "\"rrf\""
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 41,
+            "decoded_text": " or "
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 66,
+            "decoded_text": "{\"type\": \"rrf\", \"k\": 40}"
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 97,
+            "decoded_text": " \u2014 rank-based, the safe default."
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 29,
+            "decoded_text": "\"linear\""
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 44,
+            "decoded_text": " \u2014 weighted sum of the raw sub-query scores (use "
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 114,
+            "decoded_text": "weight"
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 127,
+            "decoded_text": " to tilt toward keyword or vector; requires comparable score scales)."
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 5,
+            "decoded_text": "Per-query "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 36,
+            "decoded_text": "weight"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 49,
+            "decoded_text": " lets you bias the blend, e.g. "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 101,
+            "decoded_text": "1.5"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 111,
+            "decoded_text": " on the "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 140,
+            "decoded_text": "match"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 152,
+            "decoded_text": " sub-query to favor exact terms."
+          },
+          {
+            "start_line": 342,
+            "end_line": 342,
+            "start_column": 6,
+            "decoded_text": "Reproduce it yourself"
+          },
+          {
+            "start_line": 343,
+            "end_line": 343,
+            "start_column": 5,
+            "decoded_text": "No dependencies beyond the Python 3 standard library \u2014 no pip install, no API keys, no external service. Point it at a running XERJ:"
+          },
+          {
+            "start_line": 344,
+            "end_line": 349,
+            "start_column": 18,
+            "decoded_text": "# 1. start a throwaway XERJ (insecure, local data dir) on the default port 9200\nxerj --insecure --data-dir /tmp/xerj-hybrid \\\n     --config <(printf '[server]\\nes_compat_port = 9200\\n')\n\n# 2. in another shell, run the example (defaults to http://localhost:9200)\npython3 docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 5,
+            "decoded_text": "The script reads its target from "
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 59,
+            "decoded_text": "XERJ_URL"
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 74,
+            "decoded_text": " (default "
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 105,
+            "decoded_text": "http://localhost:9200"
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 133,
+            "decoded_text": "); the legacy "
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 168,
+            "decoded_text": "BASE"
+          },
+          {
+            "start_line": 350,
+            "end_line": 350,
+            "start_column": 179,
+            "decoded_text": " alias still works. To hit a server on another port:"
+          },
+          {
+            "start_line": 351,
+            "end_line": 351,
+            "start_column": 18,
+            "decoded_text": "XERJ_URL=http://localhost:9485 python3 docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 352,
+            "end_line": 352,
+            "start_column": 5,
+            "decoded_text": "Expected tail (verified live):"
+          },
+          {
+            "start_line": 353,
+            "end_line": 363,
+            "start_column": 18,
+            "decoded_text": "--- assertions ---\nPASS  BM25 alone MISSES d2 (locked-out account: no shared keywords)\nPASS  kNN alone MISSES d3 (password policy: topic vector too far)\nPASS  Hybrid surfaces BOTH d2 and d3 in a single query\nPASS  d1 (keyword + vector match) still ranks #1 under fusion\n\nBM25 ids  : ['d1', 'd5', 'd3']\nkNN  ids  : ['d1', 'd2', 'd5']\nHybrid ids: ['d1', 'd5', 'd2', 'd3']\n\nOK"
+          },
+          {
+            "start_line": 364,
+            "end_line": 364,
+            "start_column": 5,
+            "decoded_text": "The four assertions, the scores and all three id lists are deterministic: the same request returns the same page on every run and after a restart. That holds for tied scores too \u2014 see the note on ties below."
+          },
+          {
+            "start_line": 365,
+            "end_line": 365,
+            "start_column": 5,
+            "decoded_text": "See the full runnable example \u2014 "
+          },
+          {
+            "start_line": 365,
+            "end_line": 365,
+            "start_column": 135,
+            "decoded_text": "docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 365,
+            "end_line": 365,
+            "start_column": 183,
+            "decoded_text": " on GitHub."
+          },
+          {
+            "start_line": 367,
+            "end_line": 367,
+            "start_column": 6,
+            "decoded_text": "Notes & limits"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 37,
+            "decoded_text": "knn"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 47,
+            "decoded_text": " in a query scores every doc that has the field"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 103,
+            "decoded_text": ", ranked by cosine; "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 144,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 155,
+            "decoded_text": " (or "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 181,
+            "decoded_text": "from"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 192,
+            "decoded_text": "+"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 214,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 225,
+            "decoded_text": ") is the cutoff the user sees. So "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 280,
+            "decoded_text": "k:3"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 290,
+            "decoded_text": " plus "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 317,
+            "decoded_text": "size:3"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 330,
+            "decoded_text": " means \"show the 3 nearest.\" For a hard candidate cap independent of "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 420,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 431,
+            "decoded_text": ", keep "
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 459,
+            "decoded_text": "k"
+          },
+          {
+            "start_line": 369,
+            "end_line": 369,
+            "start_column": 467,
+            "decoded_text": " small \u2014 it's carried on the sub-query."
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 16,
+            "decoded_text": "Score scales differ by fusion."
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 55,
+            "decoded_text": " RRF returns small fused scores ("
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 109,
+            "decoded_text": "0.016\u20130.033"
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 127,
+            "decoded_text": " here) \u2014 compare docs "
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 153,
+            "decoded_text": "within"
+          },
+          {
+            "start_line": 370,
+            "end_line": 370,
+            "start_column": 164,
+            "decoded_text": " a response, not against BM25/cosine absolutes."
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 16,
+            "decoded_text": "Tied fused scores are ordered by arrival."
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 66,
+            "decoded_text": " Under RRF ties are common: a document found only by one leg at rank "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 139,
+            "decoded_text": "r"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 145,
+            "decoded_text": " and a document found only by the other leg at rank "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 201,
+            "decoded_text": "r"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 207,
+            "decoded_text": " score exactly the same ("
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 253,
+            "decoded_text": "1/(k+r)"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 267,
+            "decoded_text": " each), and so do two documents at swapped ranks (1,2) and (2,1). XERJ orders a tie the way it orders every score-ranked page: fused "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 421,
+            "decoded_text": "_score"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 434,
+            "decoded_text": " descending, then the order the documents were indexed ("
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 511,
+            "decoded_text": "_seq_no"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 525,
+            "decoded_text": ", the ES "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 555,
+            "decoded_text": "_doc"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 566,
+            "decoded_text": " order), then "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 601,
+            "decoded_text": "_id"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 611,
+            "decoded_text": ". The page is the same on every run and after a restart, whether the documents are still in memory or already flushed, so "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 754,
+            "decoded_text": "from"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 765,
+            "decoded_text": "/"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 787,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 798,
+            "decoded_text": " paging does not skip or repeat a document at a page boundary, and listing the legs in another order does not reorder an equal-weight request. Before "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1002,
+            "decoded_text": "#940"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1010,
+            "decoded_text": " a tie followed hash-map iteration order, which changed from one process to the next. Before "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1158,
+            "decoded_text": "#3017"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1167,
+            "decoded_text": " the same held one level down: a "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1221,
+            "decoded_text": "knn"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1231,
+            "decoded_text": " leg served from the HNSW graph returned equally similar neighbours in graph order, and the graph differs between the indexing process, a restart and a second node, so RRF positions (and the fused scores built from them) could change. Every kNN executor now ranks its neighbours in the same score, "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1550,
+            "decoded_text": "_seq_no"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1564,
+            "decoded_text": ", "
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1587,
+            "decoded_text": "_id"
+          },
+          {
+            "start_line": 371,
+            "end_line": 371,
+            "start_column": 1597,
+            "decoded_text": " order."
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 16,
+            "decoded_text": "Vector quality is your embeddings' job."
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 64,
+            "decoded_text": " This recipe supplies vectors directly for a deterministic demo. For real semantic recall, generate "
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 185,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 204,
+            "decoded_text": " values with a production embedding model, or use a "
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 277,
+            "decoded_text": "semantic_text"
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 297,
+            "decoded_text": " field with an external "
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 342,
+            "decoded_text": "inference_id"
+          },
+          {
+            "start_line": 372,
+            "end_line": 372,
+            "start_column": 361,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 375,
+            "end_line": 375,
+            "start_column": 5,
+            "decoded_text": "For the concepts behind this recipe, read "
+          },
+          {
+            "start_line": 375,
+            "end_line": 375,
+            "start_column": 88,
+            "decoded_text": "what hybrid search is"
+          },
+          {
+            "start_line": 375,
+            "end_line": 375,
+            "start_column": 113,
+            "decoded_text": " and "
+          },
+          {
+            "start_line": 375,
+            "end_line": 375,
+            "start_column": 159,
+            "decoded_text": "BM25 compared with vector search"
+          },
+          {
+            "start_line": 375,
+            "end_line": 375,
+            "start_column": 195,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 379,
+            "end_line": 379,
+            "start_column": 10,
+            "decoded_text": "XERJ.AI \u00b7 V1.0.0-RC.102 \u00b7 2026-08-11"
+          },
+          {
+            "start_line": 380,
+            "end_line": 380,
+            "start_column": 37,
+            "decoded_text": "https://xerj.org/docs/"
+          },
+          {
+            "start_line": 381,
+            "end_line": 381,
+            "start_column": 10,
+            "decoded_text": "Recipe \u00b7 Hybrid search"
+          }
+        ],
+        "offered_text_policy": "Only decoded text data inside main.docs-content; excludes head/script/style/svg, HTML attributes and navigation outside main. No rendered appearance or CSS visibility claim. Raw HTML hash binds exact source. No HTML URL/script fetch."
+      }
+    },
+    "candidate": {
+      "llms": {
+        "path": "offered://candidate/landing/llms.txt",
+        "repository_path": "landing/llms.txt",
+        "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+        "bytes": 89033,
+        "line_count": 408,
+        "offered": true,
+        "format": "plain_text",
+        "knowledge_hop": 0
+      },
+      "llms_full": {
+        "path": "offered://candidate/landing/llms-full.txt",
+        "repository_path": "landing/llms-full.txt",
+        "sha256": "0d48e4c2a5315d80bac2c1423b6d9c5993e65ab7e3fb2e011c67d276f78628fd",
+        "bytes": 133463,
+        "line_count": 1888,
+        "offered": true,
+        "format": "plain_text",
+        "knowledge_hop": 1
+      },
+      "recipe": {
+        "path": "offered://candidate/landing/docs/recipes/hybrid-search.html",
+        "repository_path": "landing/docs/recipes/hybrid-search.html",
+        "sha256": "da53ee3e34b9aa0eed56f11feb47bef90d869f0b79f2ea0c520aa5a1fbe72f8d",
+        "bytes": 48103,
+        "line_count": 639,
+        "offered": true,
+        "format": "html",
+        "knowledge_hop": 1,
+        "offered_text_mapping": [
+          {
+            "start_line": 229,
+            "end_line": 229,
+            "start_column": 50,
+            "decoded_text": "XERJ"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 43,
+            "decoded_text": "DOCS"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 69,
+            "decoded_text": "\u00b7"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 102,
+            "decoded_text": "RECIPES"
+          },
+          {
+            "start_line": 231,
+            "end_line": 231,
+            "start_column": 131,
+            "decoded_text": "\u00b7"
+          },
+          {
+            "start_line": 231,
+            "end_line": 232,
+            "start_column": 139,
+            "decoded_text": "HYBRID SEARCH\n    "
+          },
+          {
+            "start_line": 233,
+            "end_line": 235,
+            "start_column": 127,
+            "decoded_text": "\n      PDF\n    "
+          },
+          {
+            "start_line": 237,
+            "end_line": 237,
+            "start_column": 28,
+            "decoded_text": "RECIPE \u00b7 06"
+          },
+          {
+            "start_line": 238,
+            "end_line": 238,
+            "start_column": 6,
+            "decoded_text": "Hybrid search"
+          },
+          {
+            "start_line": 241,
+            "end_line": 241,
+            "start_column": 6,
+            "decoded_text": "The problem"
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 5,
+            "decoded_text": "You run a help-desk search box. A user types "
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 58,
+            "decoded_text": "\"reset password\""
+          },
+          {
+            "start_line": 242,
+            "end_line": 242,
+            "start_column": 83,
+            "decoded_text": ". Two things are true at once:"
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 8,
+            "decoded_text": "The best answer might share "
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 44,
+            "decoded_text": "no keywords"
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 64,
+            "decoded_text": " with the query. An article titled "
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 103,
+            "decoded_text": "\"Regain entry to a locked-out account\""
+          },
+          {
+            "start_line": 244,
+            "end_line": 244,
+            "start_column": 146,
+            "decoded_text": " is exactly what they need, but BM25 never sees it \u2014 there's no lexical overlap."
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 8,
+            "decoded_text": "A keyword-exact article might be "
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 49,
+            "decoded_text": "off-topic"
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 67,
+            "decoded_text": ". "
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 73,
+            "decoded_text": "\"Password complexity and rotation policy\""
+          },
+          {
+            "start_line": 245,
+            "end_line": 245,
+            "start_column": 119,
+            "decoded_text": " contains \"password,\" so BM25 loves it, but a semantic ranker knows it's about policy, not recovery."
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 5,
+            "decoded_text": "Keyword search (BM25) is precise on exact terms and useless on synonyms. Vector search (kNN) captures meaning but drops exact-term matches whose embeddings drift. The usual \"fix\" is to run "
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 202,
+            "decoded_text": "two systems"
+          },
+          {
+            "start_line": 247,
+            "end_line": 247,
+            "start_column": 222,
+            "decoded_text": " \u2014 a lexical engine and a vector DB \u2014 then stitch and re-rank the results in your application. That's two deployments, two writes on every ingest, and a fusion step you have to build and maintain yourself."
+          },
+          {
+            "start_line": 249,
+            "end_line": 249,
+            "start_column": 6,
+            "decoded_text": "Why XERJ"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 5,
+            "decoded_text": "XERJ indexes the text field and the "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 62,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 81,
+            "decoded_text": " field in the "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 103,
+            "decoded_text": "same index"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 122,
+            "decoded_text": ", and fuses BM25 and kNN in a "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 160,
+            "decoded_text": "single "
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 188,
+            "decoded_text": "hybrid"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 201,
+            "decoded_text": " query"
+          },
+          {
+            "start_line": 250,
+            "end_line": 250,
+            "start_column": 216,
+            "decoded_text": ". One request goes out, one ranked list comes back \u2014 already fused with Reciprocal Rank Fusion (RRF). No second datastore, no client-side re-ranking."
+          },
+          {
+            "start_line": 252,
+            "end_line": 252,
+            "start_column": 6,
+            "decoded_text": "The solution"
+          },
+          {
+            "start_line": 254,
+            "end_line": 254,
+            "start_column": 6,
+            "decoded_text": "1. One index, two modalities"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 5,
+            "decoded_text": "A "
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 28,
+            "decoded_text": "text"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 39,
+            "decoded_text": " field for BM25 and a "
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 82,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 255,
+            "end_line": 255,
+            "start_column": 101,
+            "decoded_text": " field for kNN:"
+          },
+          {
+            "start_line": 256,
+            "end_line": 264,
+            "start_column": 18,
+            "decoded_text": "PUT /helpdesk\n{\n  \"mappings\": {\n    \"properties\": {\n      \"title\": { \"type\": \"text\" },\n      \"vec\":   { \"type\": \"dense_vector\", \"dims\": 4, \"similarity\": \"cosine\" }\n    }\n  }\n}"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 5,
+            "decoded_text": "The vectors in this recipe are hand-authored 4-dim "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 60,
+            "decoded_text": "topic"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 70,
+            "decoded_text": " vectors so the demo is deterministic and you can see exactly why each result ranks where it does. In production you fill "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 213,
+            "decoded_text": "vec"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 223,
+            "decoded_text": " with a real embedding model \u2014 or skip the vectors entirely and use a "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 314,
+            "decoded_text": "semantic_text"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 334,
+            "decoded_text": " field, which auto-embeds on ingest. (XERJ's built-in embedder is lexical, good for demos and keyword-semantic overlap; point "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 481,
+            "decoded_text": "inference_id"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 500,
+            "decoded_text": " at an external "
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 537,
+            "decoded_text": "/v1/embeddings"
+          },
+          {
+            "start_line": 265,
+            "end_line": 265,
+            "start_column": 558,
+            "decoded_text": " endpoint for neural-quality vectors.)"
+          },
+          {
+            "start_line": 267,
+            "end_line": 267,
+            "start_column": 6,
+            "decoded_text": "2. The corpus"
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 5,
+            "decoded_text": "Each doc has a title (for BM25) and a topic vector (for kNN). Topic axes are "
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 103,
+            "decoded_text": "[auth_recovery, security_policy, cooking, generic]"
+          },
+          {
+            "start_line": 268,
+            "end_line": 268,
+            "start_column": 160,
+            "decoded_text": ":"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 14,
+            "decoded_text": "id"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 25,
+            "decoded_text": "title"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 39,
+            "decoded_text": "vector"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 54,
+            "decoded_text": "keyword \"password\"?"
+          },
+          {
+            "start_line": 271,
+            "end_line": 271,
+            "start_column": 82,
+            "decoded_text": "near query vector?"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 14,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 25,
+            "decoded_text": "Reset your password"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 74,
+            "decoded_text": "[1.00, 0.15, 0, 0.10]"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 111,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 274,
+            "end_line": 274,
+            "start_column": 123,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 14,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 25,
+            "decoded_text": "Regain entry to a locked-out account"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 91,
+            "decoded_text": "[0.95, 0.10, 0, 0.15]"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 136,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 275,
+            "end_line": 275,
+            "start_column": 156,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 14,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 25,
+            "decoded_text": "Password complexity and rotation policy"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 94,
+            "decoded_text": "[0.15, 1.00, 0, 0.10]"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 131,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 276,
+            "end_line": 276,
+            "start_column": 151,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 14,
+            "decoded_text": "d4"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 25,
+            "decoded_text": "How to bake sourdough bread"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 82,
+            "decoded_text": "[0.00, 0.00, 1.0, 0.10]"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 121,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 277,
+            "end_line": 277,
+            "start_column": 132,
+            "decoded_text": "no"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 14,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 25,
+            "decoded_text": "Change your account password"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 83,
+            "decoded_text": "[0.85, 0.25, 0, 0.20]"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 120,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 278,
+            "end_line": 278,
+            "start_column": 132,
+            "decoded_text": "yes"
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 5,
+            "decoded_text": "The user's intent in both modalities: text "
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 69,
+            "decoded_text": "\"reset password\""
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 92,
+            "decoded_text": ", vector "
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 122,
+            "decoded_text": "[1.0, 0.20, 0.0, 0.10]"
+          },
+          {
+            "start_line": 281,
+            "end_line": 281,
+            "start_column": 151,
+            "decoded_text": " (an \"auth recovery\" direction)."
+          },
+          {
+            "start_line": 283,
+            "end_line": 283,
+            "start_column": 6,
+            "decoded_text": "3. Watch each modality fail on its own"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 13,
+            "decoded_text": "Pure BM25"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 31,
+            "decoded_text": " \u2014 "
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 55,
+            "decoded_text": "{\"match\": {\"title\": \"reset password\"}}"
+          },
+          {
+            "start_line": 284,
+            "end_line": 284,
+            "start_column": 100,
+            "decoded_text": ":"
+          },
+          {
+            "start_line": 285,
+            "end_line": 287,
+            "start_column": 18,
+            "decoded_text": "d1  score=2.2742  Reset your password\nd5  score=0.5784  Change your account password\nd3  score=0.5300  Password complexity and rotation policy"
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 5,
+            "decoded_text": "It "
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 16,
+            "decoded_text": "misses d2"
+          },
+          {
+            "start_line": 288,
+            "end_line": 288,
+            "start_column": 34,
+            "decoded_text": " entirely \u2014 \"Regain entry to a locked-out account\" has no shared keywords, so it can never be a BM25 hit."
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 13,
+            "decoded_text": "Pure kNN"
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 30,
+            "decoded_text": " \u2014 "
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 54,
+            "decoded_text": "{\"knn\": {\"field\": \"vec\", \"query_vector\": [...], \"k\": 3}}"
+          },
+          {
+            "start_line": 289,
+            "end_line": 289,
+            "start_column": 117,
+            "decoded_text": ", showing the 3 nearest:"
+          },
+          {
+            "start_line": 290,
+            "end_line": 292,
+            "start_column": 18,
+            "decoded_text": "d1  score=0.9994  Reset your password\nd2  score=0.9971  Regain entry to a locked-out account\nd5  score=0.9942  Change your account password"
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 5,
+            "decoded_text": "It surfaces d2 (great!) but "
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 41,
+            "decoded_text": "misses d3"
+          },
+          {
+            "start_line": 293,
+            "end_line": 293,
+            "start_column": 59,
+            "decoded_text": " \u2014 the password-policy article's topic vector points at \"security_policy,\" far from the query, so it falls below the top-3 cutoff."
+          },
+          {
+            "start_line": 295,
+            "end_line": 295,
+            "start_column": 6,
+            "decoded_text": "4. Hybrid recovers both \u2014 one query"
+          },
+          {
+            "start_line": 296,
+            "end_line": 310,
+            "start_column": 18,
+            "decoded_text": "POST /helpdesk/_search\n{\n  \"size\": 5,\n  \"query\": {\n    \"hybrid\": {\n      \"queries\": [\n        { \"query\": { \"match\": { \"title\": \"reset password\" } }, \"weight\": 1.0 },\n        { \"query\": { \"knn\": { \"field\": \"vec\",\n                              \"query_vector\": [1.0, 0.2, 0.0, 0.1],\n                              \"k\": 3 } }, \"weight\": 1.0 }\n      ],\n      \"fusion\": \"rrf\"\n    }\n  }\n}"
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 5,
+            "decoded_text": "Real response (trimmed to "
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 52,
+            "decoded_text": "title"
+          },
+          {
+            "start_line": 311,
+            "end_line": 311,
+            "start_column": 64,
+            "decoded_text": ", printed verbatim by the script):"
+          },
+          {
+            "start_line": 312,
+            "end_line": 323,
+            "start_column": 18,
+            "decoded_text": "{\n  \"hits\": {\n    \"total\": { \"value\": 4, \"relation\": \"eq\" },\n    \"max_score\": 0.03279,\n    \"hits\": [\n      { \"_id\": \"d1\", \"_score\": 0.03279, \"_source\": { \"title\": \"Reset your password\" } },\n      { \"_id\": \"d5\", \"_score\": 0.032, \"_source\": { \"title\": \"Change your account password\" } },\n      { \"_id\": \"d2\", \"_score\": 0.01613, \"_source\": { \"title\": \"Regain entry to a locked-out account\" } },\n      { \"_id\": \"d3\", \"_score\": 0.01587, \"_source\": { \"title\": \"Password complexity and rotation policy\" } }\n    ]\n  }\n}"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 13,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 24,
+            "decoded_text": " (only kNN found it) and "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 57,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 68,
+            "decoded_text": " (only BM25 found it) are now "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 102,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 111,
+            "decoded_text": " on the page, and "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 137,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 148,
+            "decoded_text": " \u2014 the doc that matched on "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 179,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 188,
+            "decoded_text": " keyword and vector \u2014 is still ranked #1. Watch "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 244,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 255,
+            "decoded_text": ": BM25 ranks it #2 and kNN ranks it #3 \u2014 first in neither \u2014 yet because "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 331,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 340,
+            "decoded_text": " signals agree on it, fusion keeps it at "
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 389,
+            "decoded_text": "#2"
+          },
+          {
+            "start_line": 324,
+            "end_line": 324,
+            "start_column": 400,
+            "decoded_text": ", ahead of d2 and d3, each of which only one modality found. That's the whole point: fusion rewards agreement between the two signals while still admitting the strong single-signal hits that either method alone would have dropped."
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 5,
+            "decoded_text": "Only "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 18,
+            "decoded_text": "four"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 31,
+            "decoded_text": " docs come back, not five: d4 (\"How to bake sourdough bread\") is in "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 103,
+            "decoded_text": "neither"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 115,
+            "decoded_text": " sub-query's result set \u2014 it shares no keywords and its topic vector falls outside the kNN "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 227,
+            "decoded_text": "k:3"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 237,
+            "decoded_text": " cutoff \u2014 so RRF never sees it. Fusion ranks the "
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 290,
+            "decoded_text": "union"
+          },
+          {
+            "start_line": 325,
+            "end_line": 325,
+            "start_column": 300,
+            "decoded_text": " of the sub-query hits, nothing more."
+          },
+          {
+            "start_line": 327,
+            "end_line": 327,
+            "start_column": 6,
+            "decoded_text": "How the fusion works"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 26,
+            "decoded_text": "\"fusion\": \"rrf\""
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 48,
+            "decoded_text": " uses Reciprocal Rank Fusion: each sub-query contributes "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 126,
+            "decoded_text": "weight / (k + rank)"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 152,
+            "decoded_text": " for a doc (default "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 193,
+            "decoded_text": "k = 60"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 206,
+            "decoded_text": ", "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 229,
+            "decoded_text": "rank"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 240,
+            "decoded_text": " is 1-based), summed across sub-queries. It ranks by "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 297,
+            "decoded_text": "position"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 310,
+            "decoded_text": ", not raw score, so BM25's "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 358,
+            "decoded_text": "0.5"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 368,
+            "decoded_text": "\u2013"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 390,
+            "decoded_text": "2.3"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 400,
+            "decoded_text": " scores and kNN's "
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 439,
+            "decoded_text": "~0.99"
+          },
+          {
+            "start_line": 328,
+            "end_line": 328,
+            "start_column": 451,
+            "decoded_text": " cosines never have to be normalized onto a common scale \u2014 a persistent headache when you fuse two systems yourself. The scores above fall straight out of this formula:"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 16,
+            "decoded_text": "d1"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 27,
+            "decoded_text": " is rank 1 in "
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 45,
+            "decoded_text": "both"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 54,
+            "decoded_text": " lists \u2192 "
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 84,
+            "decoded_text": "1/(60+1) + 1/(60+1) = 0.03279"
+          },
+          {
+            "start_line": 330,
+            "end_line": 330,
+            "start_column": 120,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 16,
+            "decoded_text": "d5"
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 27,
+            "decoded_text": " is rank 2 in the BM25 list and rank 3 in the kNN list \u2192 "
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 105,
+            "decoded_text": "1/62 + 1/63 = 0.03200"
+          },
+          {
+            "start_line": 331,
+            "end_line": 331,
+            "start_column": 133,
+            "decoded_text": ", still beating either single-list hit because two contributions stack."
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 16,
+            "decoded_text": "d2"
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 27,
+            "decoded_text": " is rank 2 in the kNN list only \u2192 "
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 82,
+            "decoded_text": "1/(60+2) = 0.01613"
+          },
+          {
+            "start_line": 332,
+            "end_line": 332,
+            "start_column": 107,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 16,
+            "decoded_text": "d3"
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 27,
+            "decoded_text": " is rank 3 in the BM25 list only \u2192 "
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 83,
+            "decoded_text": "1/(60+3) = 0.01587"
+          },
+          {
+            "start_line": 333,
+            "end_line": 333,
+            "start_column": 108,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 5,
+            "decoded_text": "Other "
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 32,
+            "decoded_text": "fusion"
+          },
+          {
+            "start_line": 335,
+            "end_line": 335,
+            "start_column": 45,
+            "decoded_text": " options:"
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 29,
+            "decoded_text": "\"rrf\""
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 41,
+            "decoded_text": " or "
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 66,
+            "decoded_text": "{\"type\": \"rrf\", \"k\": 40}"
+          },
+          {
+            "start_line": 337,
+            "end_line": 337,
+            "start_column": 97,
+            "decoded_text": " \u2014 rank-based, the safe default."
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 29,
+            "decoded_text": "\"linear\""
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 44,
+            "decoded_text": " \u2014 weighted sum of the raw sub-query scores (use "
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 114,
+            "decoded_text": "weight"
+          },
+          {
+            "start_line": 338,
+            "end_line": 338,
+            "start_column": 127,
+            "decoded_text": " to tilt toward keyword or vector; requires comparable score scales)."
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 5,
+            "decoded_text": "Per-query "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 36,
+            "decoded_text": "weight"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 49,
+            "decoded_text": " lets you bias the blend, e.g. "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 101,
+            "decoded_text": "1.5"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 111,
+            "decoded_text": " on the "
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 140,
+            "decoded_text": "match"
+          },
+          {
+            "start_line": 340,
+            "end_line": 340,
+            "start_column": 152,
+            "decoded_text": " sub-query to favor exact terms."
+          },
+          {
+            "start_line": 342,
+            "end_line": 342,
+            "start_column": 32,
+            "decoded_text": "Choose kNN alone or a fusion configuration"
+          },
+          {
+            "start_line": 343,
+            "end_line": 343,
+            "start_column": 5,
+            "decoded_text": "The existing weights and fusion constant are controls to evaluate, not a reason to prefer hybrid on every corpus. Start by checking each input list."
+          },
+          {
+            "start_line": 344,
+            "end_line": 344,
+            "start_column": 5,
+            "decoded_text": "Fusion only reorders the union of its input hits. If a relevant document is missing from every leg, fix retrieval or the embeddings before tuning fusion."
+          },
+          {
+            "start_line": 345,
+            "end_line": 345,
+            "start_column": 5,
+            "decoded_text": "The following requests reuse this recipe's five documents and query vector. Each request goes to POST /helpdesk/_search. The weights 2 and 0.5 and fusion constant 7 are synthetic arithmetic examples, not recommended production settings. They demonstrate the controls, not retrieval quality."
+          },
+          {
+            "start_line": 346,
+            "end_line": 346,
+            "start_column": 6,
+            "decoded_text": "kNN only"
+          },
+          {
+            "start_line": 347,
+            "end_line": 361,
+            "start_column": 18,
+            "decoded_text": "{\n  \"size\": 5,\n  \"query\": {\n    \"knn\": {\n      \"field\": \"vec\",\n      \"query_vector\": [\n        1.0,\n        0.2,\n        0.0,\n        0.1\n      ],\n      \"k\": 3\n    }\n  }\n}"
+          },
+          {
+            "start_line": 362,
+            "end_line": 362,
+            "start_column": 6,
+            "decoded_text": "Equal-weight RRF"
+          },
+          {
+            "start_line": 363,
+            "end_line": 395,
+            "start_column": 18,
+            "decoded_text": "{\n  \"size\": 5,\n  \"query\": {\n    \"hybrid\": {\n      \"queries\": [\n        {\n          \"query\": {\n            \"match\": {\n              \"title\": \"reset password\"\n            }\n          },\n          \"weight\": 1.0\n        },\n        {\n          \"query\": {\n            \"knn\": {\n              \"field\": \"vec\",\n              \"query_vector\": [\n                1.0,\n                0.2,\n                0.0,\n                0.1\n              ],\n              \"k\": 3\n            }\n          },\n          \"weight\": 1.0\n        }\n      ],\n      \"fusion\": \"rrf\"\n    }\n  }\n}"
+          },
+          {
+            "start_line": 396,
+            "end_line": 396,
+            "start_column": 6,
+            "decoded_text": "Weighted RRF"
+          },
+          {
+            "start_line": 397,
+            "end_line": 429,
+            "start_column": 18,
+            "decoded_text": "{\n  \"size\": 5,\n  \"query\": {\n    \"hybrid\": {\n      \"queries\": [\n        {\n          \"query\": {\n            \"match\": {\n              \"title\": \"reset password\"\n            }\n          },\n          \"weight\": 2.0\n        },\n        {\n          \"query\": {\n            \"knn\": {\n              \"field\": \"vec\",\n              \"query_vector\": [\n                1.0,\n                0.2,\n                0.0,\n                0.1\n              ],\n              \"k\": 3\n            }\n          },\n          \"weight\": 0.5\n        }\n      ],\n      \"fusion\": \"rrf\"\n    }\n  }\n}"
+          },
+          {
+            "start_line": 430,
+            "end_line": 430,
+            "start_column": 6,
+            "decoded_text": "Custom RRF constant"
+          },
+          {
+            "start_line": 431,
+            "end_line": 466,
+            "start_column": 18,
+            "decoded_text": "{\n  \"size\": 5,\n  \"query\": {\n    \"hybrid\": {\n      \"queries\": [\n        {\n          \"query\": {\n            \"match\": {\n              \"title\": \"reset password\"\n            }\n          },\n          \"weight\": 2.0\n        },\n        {\n          \"query\": {\n            \"knn\": {\n              \"field\": \"vec\",\n              \"query_vector\": [\n                1.0,\n                0.2,\n                0.0,\n                0.1\n              ],\n              \"k\": 3\n            }\n          },\n          \"weight\": 0.5\n        }\n      ],\n      \"fusion\": {\n        \"type\": \"rrf\",\n        \"k\": 7\n      }\n    }\n  }\n}"
+          },
+          {
+            "start_line": 467,
+            "end_line": 467,
+            "start_column": 6,
+            "decoded_text": "Keep the controls distinct"
+          },
+          {
+            "start_line": 468,
+            "end_line": 468,
+            "start_column": 5,
+            "decoded_text": "The k inside the knn clause limits that leg's neighbor pool. The k inside the fusion object is the RRF rank constant. The response size controls the final page. These settings do different jobs."
+          },
+          {
+            "start_line": 469,
+            "end_line": 469,
+            "start_column": 5,
+            "decoded_text": "In RRF, a larger weight increases one leg's contribution. A smaller fusion constant gives early ranks more influence relative to deeper ranks. Neither change creates new input hits. A zero weight contributes zero, but a hit returned only by that leg can remain in the union with a zero fused score."
+          },
+          {
+            "start_line": 470,
+            "end_line": 470,
+            "start_column": 6,
+            "decoded_text": "Choose on tuning data, report on held-out data"
+          },
+          {
+            "start_line": 472,
+            "end_line": 472,
+            "start_column": 8,
+            "decoded_text": "Prepare representative queries with relevance judgments. Split them into tuning and held-out sets before choosing any settings."
+          },
+          {
+            "start_line": 473,
+            "end_line": 473,
+            "start_column": 8,
+            "decoded_text": "Keep the corpus, judgments, embedder and its version, dimensions, filters, candidate windows and final result cutoff fixed across the four arms. Use the same query vector for each vector-backed request. Record the embedding mode; the lexical default is not a neural model."
+          },
+          {
+            "start_line": 474,
+            "end_line": 474,
+            "start_column": 8,
+            "decoded_text": "On the tuning set, compare kNN alone, equal-weight RRF, weighted RRF and RRF with a custom constant. Choose weights and the constant there, not on the held-out set. Keep the other controls fixed when isolating a weight or constant change."
+          },
+          {
+            "start_line": 475,
+            "end_line": 475,
+            "start_column": 8,
+            "decoded_text": "Evaluate the chosen configurations on the untouched held-out set. Report a relevance metric suited to the task, empty-result rates and relevant documents missing from each leg. Include per-query regressions and uncertainty, not only an average."
+          },
+          {
+            "start_line": 476,
+            "end_line": 476,
+            "start_column": 8,
+            "decoded_text": "Measure latency and cost under the same workload and hardware conditions. Record query time, embedding costs and resource use. A relevance gain may not justify its operational cost."
+          },
+          {
+            "start_line": 478,
+            "end_line": 478,
+            "start_column": 5,
+            "decoded_text": "Prefer kNN alone when it meets your relevance and operational requirements and lexical fusion adds irrelevant hits. Evaluate fusion when lexical hits recover relevant exact terms that the vector leg misses. If the evidence is inconclusive, do not assume the extra configuration helps."
+          },
+          {
+            "start_line": 479,
+            "end_line": 479,
+            "start_column": 5,
+            "decoded_text": "The synthetic corpus above checks request behavior and RRF arithmetic only. It does not select production weights, establish a quality winner, or justify changing the default. The published quality measurements are tied to their stated datasets, embedder and release."
+          },
+          {
+            "start_line": 480,
+            "end_line": 480,
+            "start_column": 5,
+            "decoded_text": "Read the "
+          },
+          {
+            "start_line": 480,
+            "end_line": 480,
+            "start_column": 59,
+            "decoded_text": "embedding selection caveats"
+          },
+          {
+            "start_line": 480,
+            "end_line": 480,
+            "start_column": 90,
+            "decoded_text": " and the "
+          },
+          {
+            "start_line": 480,
+            "end_line": 480,
+            "start_column": 154,
+            "decoded_text": "dated hybrid quality measurements"
+          },
+          {
+            "start_line": 480,
+            "end_line": 480,
+            "start_column": 191,
+            "decoded_text": " before applying those results to your data."
+          },
+          {
+            "start_line": 482,
+            "end_line": 482,
+            "start_column": 6,
+            "decoded_text": "Reproduce it yourself"
+          },
+          {
+            "start_line": 483,
+            "end_line": 483,
+            "start_column": 5,
+            "decoded_text": "No dependencies beyond the Python 3 standard library \u2014 no pip install, no API keys, no external service. Point it at a running XERJ:"
+          },
+          {
+            "start_line": 484,
+            "end_line": 489,
+            "start_column": 18,
+            "decoded_text": "# 1. start a throwaway XERJ (insecure, local data dir) on the default port 9200\nxerj --insecure --data-dir /tmp/xerj-hybrid \\\n     --config <(printf '[server]\\nes_compat_port = 9200\\n')\n\n# 2. in another shell, run the example (defaults to http://localhost:9200)\npython3 docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 5,
+            "decoded_text": "The script reads its target from "
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 59,
+            "decoded_text": "XERJ_URL"
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 74,
+            "decoded_text": " (default "
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 105,
+            "decoded_text": "http://localhost:9200"
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 133,
+            "decoded_text": "); the legacy "
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 168,
+            "decoded_text": "BASE"
+          },
+          {
+            "start_line": 490,
+            "end_line": 490,
+            "start_column": 179,
+            "decoded_text": " alias still works. To hit a server on another port:"
+          },
+          {
+            "start_line": 491,
+            "end_line": 491,
+            "start_column": 18,
+            "decoded_text": "XERJ_URL=http://localhost:9485 python3 docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 492,
+            "end_line": 492,
+            "start_column": 5,
+            "decoded_text": "Expected tail (verified live):"
+          },
+          {
+            "start_line": 493,
+            "end_line": 503,
+            "start_column": 18,
+            "decoded_text": "--- assertions ---\nPASS  BM25 alone MISSES d2 (locked-out account: no shared keywords)\nPASS  kNN alone MISSES d3 (password policy: topic vector too far)\nPASS  Hybrid surfaces BOTH d2 and d3 in a single query\nPASS  d1 (keyword + vector match) still ranks #1 under fusion\n\nBM25 ids  : ['d1', 'd5', 'd3']\nkNN  ids  : ['d1', 'd2', 'd5']\nHybrid ids: ['d1', 'd5', 'd2', 'd3']\n\nOK"
+          },
+          {
+            "start_line": 504,
+            "end_line": 504,
+            "start_column": 5,
+            "decoded_text": "The four assertions, the scores and all three id lists are deterministic: the same request returns the same page on every run and after a restart. That holds for tied scores too \u2014 see the note on ties below."
+          },
+          {
+            "start_line": 505,
+            "end_line": 505,
+            "start_column": 5,
+            "decoded_text": "See the full runnable example \u2014 "
+          },
+          {
+            "start_line": 505,
+            "end_line": 505,
+            "start_column": 135,
+            "decoded_text": "docs/examples/hybrid-search/hybrid_search.py"
+          },
+          {
+            "start_line": 505,
+            "end_line": 505,
+            "start_column": 183,
+            "decoded_text": " on GitHub."
+          },
+          {
+            "start_line": 507,
+            "end_line": 507,
+            "start_column": 6,
+            "decoded_text": "Notes & limits"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 37,
+            "decoded_text": "knn"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 47,
+            "decoded_text": " in a query scores every doc that has the field"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 103,
+            "decoded_text": ", ranked by cosine; "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 144,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 155,
+            "decoded_text": " (or "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 181,
+            "decoded_text": "from"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 192,
+            "decoded_text": "+"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 214,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 225,
+            "decoded_text": ") is the cutoff the user sees. So "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 280,
+            "decoded_text": "k:3"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 290,
+            "decoded_text": " plus "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 317,
+            "decoded_text": "size:3"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 330,
+            "decoded_text": " means \"show the 3 nearest.\" For a hard candidate cap independent of "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 420,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 431,
+            "decoded_text": ", keep "
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 459,
+            "decoded_text": "k"
+          },
+          {
+            "start_line": 509,
+            "end_line": 509,
+            "start_column": 467,
+            "decoded_text": " small \u2014 it's carried on the sub-query."
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 16,
+            "decoded_text": "Score scales differ by fusion."
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 55,
+            "decoded_text": " RRF returns small fused scores ("
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 109,
+            "decoded_text": "0.016\u20130.033"
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 127,
+            "decoded_text": " here) \u2014 compare docs "
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 153,
+            "decoded_text": "within"
+          },
+          {
+            "start_line": 510,
+            "end_line": 510,
+            "start_column": 164,
+            "decoded_text": " a response, not against BM25/cosine absolutes."
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 16,
+            "decoded_text": "Tied fused scores are ordered by arrival."
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 66,
+            "decoded_text": " Under RRF ties are common: a document found only by one leg at rank "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 139,
+            "decoded_text": "r"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 145,
+            "decoded_text": " and a document found only by the other leg at rank "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 201,
+            "decoded_text": "r"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 207,
+            "decoded_text": " score exactly the same ("
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 253,
+            "decoded_text": "1/(k+r)"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 267,
+            "decoded_text": " each), and so do two documents at swapped ranks (1,2) and (2,1). XERJ orders a tie the way it orders every score-ranked page: fused "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 421,
+            "decoded_text": "_score"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 434,
+            "decoded_text": " descending, then the order the documents were indexed ("
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 511,
+            "decoded_text": "_seq_no"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 525,
+            "decoded_text": ", the ES "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 555,
+            "decoded_text": "_doc"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 566,
+            "decoded_text": " order), then "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 601,
+            "decoded_text": "_id"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 611,
+            "decoded_text": ". The page is the same on every run and after a restart, whether the documents are still in memory or already flushed, so "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 754,
+            "decoded_text": "from"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 765,
+            "decoded_text": "/"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 787,
+            "decoded_text": "size"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 798,
+            "decoded_text": " paging does not skip or repeat a document at a page boundary, and listing the legs in another order does not reorder an equal-weight request. Before "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1002,
+            "decoded_text": "#940"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1010,
+            "decoded_text": " a tie followed hash-map iteration order, which changed from one process to the next. Before "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1158,
+            "decoded_text": "#3017"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1167,
+            "decoded_text": " the same held one level down: a "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1221,
+            "decoded_text": "knn"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1231,
+            "decoded_text": " leg served from the HNSW graph returned equally similar neighbours in graph order, and the graph differs between the indexing process, a restart and a second node, so RRF positions (and the fused scores built from them) could change. Every kNN executor now ranks its neighbours in the same score, "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1550,
+            "decoded_text": "_seq_no"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1564,
+            "decoded_text": ", "
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1587,
+            "decoded_text": "_id"
+          },
+          {
+            "start_line": 511,
+            "end_line": 511,
+            "start_column": 1597,
+            "decoded_text": " order."
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 16,
+            "decoded_text": "Vector quality is your embeddings' job."
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 64,
+            "decoded_text": " This recipe supplies vectors directly for a deterministic demo. For real semantic recall, generate "
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 185,
+            "decoded_text": "dense_vector"
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 204,
+            "decoded_text": " values with a production embedding model, or use a "
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 277,
+            "decoded_text": "semantic_text"
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 297,
+            "decoded_text": " field with an external "
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 342,
+            "decoded_text": "inference_id"
+          },
+          {
+            "start_line": 512,
+            "end_line": 512,
+            "start_column": 361,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 515,
+            "end_line": 515,
+            "start_column": 5,
+            "decoded_text": "For the concepts behind this recipe, read "
+          },
+          {
+            "start_line": 515,
+            "end_line": 515,
+            "start_column": 88,
+            "decoded_text": "what hybrid search is"
+          },
+          {
+            "start_line": 515,
+            "end_line": 515,
+            "start_column": 113,
+            "decoded_text": " and "
+          },
+          {
+            "start_line": 515,
+            "end_line": 515,
+            "start_column": 159,
+            "decoded_text": "BM25 compared with vector search"
+          },
+          {
+            "start_line": 515,
+            "end_line": 515,
+            "start_column": 195,
+            "decoded_text": "."
+          },
+          {
+            "start_line": 519,
+            "end_line": 519,
+            "start_column": 10,
+            "decoded_text": "XERJ.AI \u00b7 V1.0.0-RC.102 \u00b7 2026-08-11"
+          },
+          {
+            "start_line": 520,
+            "end_line": 520,
+            "start_column": 37,
+            "decoded_text": "https://xerj.org/docs/"
+          },
+          {
+            "start_line": 521,
+            "end_line": 521,
+            "start_column": 10,
+            "decoded_text": "Recipe \u00b7 Hybrid search"
+          }
+        ],
+        "offered_text_policy": "Only decoded text data inside main.docs-content; excludes head/script/style/svg, HTML attributes and navigation outside main. No rendered appearance or CSS visibility claim. Raw HTML hash binds exact source. No HTML URL/script fetch."
+      }
+    }
+  },
+  "link_traversal": {
+    "baseline": {
+      "entry_surface": "llms",
+      "allowed_links": [
+        {
+          "destination_surface": "llms_full",
+          "destination_url": "https://xerj.org/llms-full.txt",
+          "provenance": {
+            "surface_id": "llms",
+            "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+            "start_line": 145,
+            "end_line": 145,
+            "exact_text": "- [llms-full.txt \u00a73](https://xerj.org/llms-full.txt): the full contract for the core operations \u2014 every parameter, response shape, error and field type",
+            "hop": 0
+          },
+          "hop": 1
+        },
+        {
+          "destination_surface": "recipe",
+          "destination_url": "https://xerj.org/docs/recipes/hybrid-search",
+          "provenance": {
+            "surface_id": "llms",
+            "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+            "start_line": 372,
+            "end_line": 372,
+            "exact_text": "- [Semantic search & RAG](https://xerj.org/docs/recipes/semantic-search-rag) \u00b7 [passage retrieval](https://xerj.org/docs/recipes/passage-retrieval) \u00b7 [vector search (kNN)](https://xerj.org/docs/recipes/vector-search-knn) \u00b7 [vector quantization](https://xerj.org/docs/recipes/vector-quantization) \u00b7 [hybrid search](https://xerj.org/docs/recipes/hybrid-search): one retrieval mode per recipe, each with a runnable request",
+            "hop": 0
+          },
+          "hop": 1
+        }
+      ],
+      "max_hops_from_entry": 1,
+      "follow_other_links": false,
+      "network_fetch": false,
+      "mechanism": "Same reviewed local artifact mechanism both states; referenced URL selects exact prebound bytes, no live fetch. No llms_full-to-recipe second hop."
+    },
+    "candidate": {
+      "entry_surface": "llms",
+      "allowed_links": [
+        {
+          "destination_surface": "llms_full",
+          "destination_url": "https://xerj.org/llms-full.txt",
+          "provenance": {
+            "surface_id": "llms",
+            "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+            "start_line": 145,
+            "end_line": 145,
+            "exact_text": "- [llms-full.txt \u00a73](https://xerj.org/llms-full.txt): the full contract for the core operations \u2014 every parameter, response shape, error and field type",
+            "hop": 0
+          },
+          "hop": 1
+        },
+        {
+          "destination_surface": "recipe",
+          "destination_url": "https://xerj.org/docs/recipes/hybrid-search",
+          "provenance": {
+            "surface_id": "llms",
+            "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+            "start_line": 372,
+            "end_line": 372,
+            "exact_text": "- [Semantic search & RAG](https://xerj.org/docs/recipes/semantic-search-rag) \u00b7 [passage retrieval](https://xerj.org/docs/recipes/passage-retrieval) \u00b7 [vector search (kNN)](https://xerj.org/docs/recipes/vector-search-knn) \u00b7 [vector quantization](https://xerj.org/docs/recipes/vector-quantization) \u00b7 [hybrid search](https://xerj.org/docs/recipes/hybrid-search): one retrieval mode per recipe, each with a runnable request",
+            "hop": 0
+          },
+          "hop": 1
+        }
+      ],
+      "max_hops_from_entry": 1,
+      "follow_other_links": false,
+      "network_fetch": false,
+      "mechanism": "Same reviewed local artifact mechanism both states; referenced URL selects exact prebound bytes, no live fetch. No llms_full-to-recipe second hop."
+    }
+  },
+  "actions": [
+    {
+      "id": "P2_REGISTERED_SESSION",
+      "persona": "P2",
+      "intent": "Initialize the actual operator-generated stdio registration and list its actual tools.",
+      "derivation": "Launch only exact generated .mcp.json command/args/env. JSON-RPC framing is protocol machinery, not product endpoint knowledge. Do not assume tool count.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 407,
+              "end_line": 407,
+              "exact_text": "- [anthropic-tools.json](https://xerj.org/docs/agents/schemas/anthropic-tools.json): Anthropic tool-use shape \u2014 an array of `{name, description, input_schema}`, the same six \u2014 the two files carry the HTTP-core search/memory surface only, by design. The folder scan behind `xerj autoindex` is CLI-only (reading the catalog it writes is HTTP \u2014 see `POST /autoindex-catalog/_search` above); the brain, map, code-search and plan tools live in the MCP registry. If you *can* run a process, `xerj mcp` is an MCP stdio server inside the same binary serving the full MCP set (23 tools on rc.101, 24 with `--facts-model-dir`); it does not start a node \u2014 point it at one you already started",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 90,
+              "end_line": 90,
+              "exact_text": "Registration, by whoever has a shell, then restart the session. Success: `xerj_hub_ask` is in the tool list. If `xerj_search` is listed and no `xerj_hub_*` tool is, the binary has no hub key. Use the binary's absolute path: an editor started from a desktop icon does not inherit the shell PATH.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "operator generated registration output ID",
+            "actual initialize response ID",
+            "actual tools/list response ID"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 407,
+              "end_line": 407,
+              "exact_text": "- [anthropic-tools.json](https://xerj.org/docs/agents/schemas/anthropic-tools.json): Anthropic tool-use shape \u2014 an array of `{name, description, input_schema}`, the same six \u2014 the two files carry the HTTP-core search/memory surface only, by design. The folder scan behind `xerj autoindex` is CLI-only (reading the catalog it writes is HTTP \u2014 see `POST /autoindex-catalog/_search` above); the brain, map, code-search and plan tools live in the MCP registry. If you *can* run a process, `xerj mcp` is an MCP stdio server inside the same binary serving the full MCP set (23 tools on rc.101, 24 with `--facts-model-dir`); it does not start a node \u2014 point it at one you already started",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 90,
+              "end_line": 90,
+              "exact_text": "Registration, by whoever has a shell, then restart the session. Success: `xerj_hub_ask` is in the tool list. If `xerj_search` is listed and no `xerj_hub_*` tool is, the binary has no hub key. Use the binary's absolute path: an editor started from a desktop icon does not inherit the shell PATH.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "operator generated registration output ID",
+            "actual initialize response ID",
+            "actual tools/list response ID"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_MAP",
+      "persona": "P2",
+      "intent": "Discover indexed datasets, field names and real example values.",
+      "derivation": "Choose only actual advertised map tool whose actual description/schema establishes this role; exact name from tools/list must also match this surface span. No prefilled index/field/value.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 404,
+              "end_line": 404,
+              "exact_text": "- [mcp-tools.json](https://xerj.org/docs/agents/schemas/mcp-tools.json): MCP shape: an object with a `tools` array of `name` / `description` / `inputSchema`, twenty-four tools on main (the six HTTP operations plus `xerj_status`, `xerj_def`, `xerj_batch_search`, `xerj_brain_ego`, `xerj_brain_link`, `xerj_brain_unlink`, `xerj_brain_overview`, `xerj_map`, `xerj_code_search`, `xerj_plan`, `xerj_index_budget`, `xerj_autoindex_remove`, `xerj_sources` (ships in rc.102), `xerj_field_report`, `xerj_corpus_feedback`, `xerj_hub_find`, `xerj_hub_def`, `xerj_hub_ask`), generated from a real `tools/list` of the server that serves it. The rc.101 release serves 23 (24 with `--facts-model-dir`, which adds `xerj_facts_ask`). `xerj_map` reads the autoindex catalog over HTTP; `xerj_plan` proxies `POST /_ask` (below); `xerj_code_search` needs the reference-coding corpora indexed; `xerj_index_budget` counts a folder and estimates the index against the node's flood-stage budget before `xerj autoindex` hashes anything, and does not index; `xerj_field_report` files an agent field report (GitHub PR first, the `/api/field-report` endpoint when GitHub is unavailable). A binary with no hub key omits the three hub tools (21 tools on main, 20 on rc.101). `xerj_autoindex_remove` drops one autoindexed folder after listing it and deletes nothing unless `confirm` is true",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 106,
+              "end_line": 106,
+              "exact_text": "> - **Unknown-field lookups: on `ax-*` (autoindex) indices a wrong field name is a 400, not a silent 0-hit.** Elasticsearch returns `0 hits` for a lookup on an unmapped field, which an agent cannot tell from an empty corpus (measured: 5 of 30 agent intents silently searched a wrong field name). XERJ's wire default is ES's own behaviour \u2014 0 hits \u2014 plus an additive `_xerj.hints` `unknown_field` entry naming what does not exist and what does; but the indices `xerj autoindex` creates have full explicit schemas, and there a `term`/`terms`/`match`/`match_phrase`/`match_phrase_prefix`/`prefix`/`wildcard`/`regexp`/`fuzzy`/`range` \u2014 or a `multi_match` whose `fields` are ALL unmapped \u2014 answers `400` naming the field and the searchable fields (a half-real `multi_match` still searches the real fields, with a hint). Do not guess field names: `GET /{index}/_mapping` or the `xerj_map` tool gives the real ones. Turn the refusal on anywhere with `?strict_unknown_fields=true` per request or `index.query.strict_unknown_fields=true` per index (one strict target covers the whole request); `?strict_unknown_fields=false` opts one request back out, and `_msearch` follows the index setting only (NDJSON items carry no params). Exemptions either way: `exists` on an unmapped field stays a truthful 0 hits, and a just-created index with no mappings yet is never validated.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P2_REGISTERED_SESSION actual tools/list schema"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 404,
+              "end_line": 404,
+              "exact_text": "- [mcp-tools.json](https://xerj.org/docs/agents/schemas/mcp-tools.json): MCP shape: an object with a `tools` array of `name` / `description` / `inputSchema`, twenty-four tools on main (the six HTTP operations plus `xerj_status`, `xerj_def`, `xerj_batch_search`, `xerj_brain_ego`, `xerj_brain_link`, `xerj_brain_unlink`, `xerj_brain_overview`, `xerj_map`, `xerj_code_search`, `xerj_plan`, `xerj_index_budget`, `xerj_autoindex_remove`, `xerj_sources` (ships in rc.102), `xerj_field_report`, `xerj_corpus_feedback`, `xerj_hub_find`, `xerj_hub_def`, `xerj_hub_ask`), generated from a real `tools/list` of the server that serves it. The rc.101 release serves 23 (24 with `--facts-model-dir`, which adds `xerj_facts_ask`). `xerj_map` reads the autoindex catalog over HTTP; `xerj_plan` proxies `POST /_ask` (below); `xerj_code_search` needs the reference-coding corpora indexed; `xerj_index_budget` counts a folder and estimates the index against the node's flood-stage budget before `xerj autoindex` hashes anything, and does not index; `xerj_field_report` files an agent field report (GitHub PR first, the `/api/field-report` endpoint when GitHub is unavailable). A binary with no hub key omits the three hub tools (21 tools on main, 20 on rc.101). `xerj_autoindex_remove` drops one autoindexed folder after listing it and deletes nothing unless `confirm` is true",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 106,
+              "end_line": 106,
+              "exact_text": "> - **Unknown-field lookups: on `ax-*` (autoindex) indices a wrong field name is a 400, not a silent 0-hit.** Elasticsearch returns `0 hits` for a lookup on an unmapped field, which an agent cannot tell from an empty corpus (measured: 5 of 30 agent intents silently searched a wrong field name). XERJ's wire default is ES's own behaviour \u2014 0 hits \u2014 plus an additive `_xerj.hints` `unknown_field` entry naming what does not exist and what does; but the indices `xerj autoindex` creates have full explicit schemas, and there a `term`/`terms`/`match`/`match_phrase`/`match_phrase_prefix`/`prefix`/`wildcard`/`regexp`/`fuzzy`/`range` \u2014 or a `multi_match` whose `fields` are ALL unmapped \u2014 answers `400` naming the field and the searchable fields (a half-real `multi_match` still searches the real fields, with a hint). Do not guess field names: `GET /{index}/_mapping` or the `xerj_map` tool gives the real ones. Turn the refusal on anywhere with `?strict_unknown_fields=true` per request or `index.query.strict_unknown_fields=true` per index (one strict target covers the whole request); `?strict_unknown_fields=false` opts one request back out, and `_msearch` follows the index setting only (NDJSON items carry no params). Exemptions either way: `exists` on an unmapped field stays a truthful 0 hits, and a just-created index with no mappings yet is never validated.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P2_REGISTERED_SESSION actual tools/list schema"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_SEARCH",
+      "persona": "P2",
+      "intent": "Search the frozen question using actual discovered schema and dataset fields.",
+      "derivation": "Use the actual advertised lexical/structured search tool; schema determines argument keys; map determines index/field/value. The fixed question is task input, not a fabricated indexed value.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list search schema",
+            "P2_MAP actual output",
+            "fixed question binding"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list search schema",
+            "P2_MAP actual output",
+            "fixed question binding"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_PLAN",
+      "persona": "P2",
+      "intent": "Ask the advertised deterministic planner for a grounded query.",
+      "derivation": "Tool identity/schema from tools/list. Ground prompt using prior map/catalog fields and actual values; if unavailable record loss instead of guessing.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 404,
+              "end_line": 404,
+              "exact_text": "- [mcp-tools.json](https://xerj.org/docs/agents/schemas/mcp-tools.json): MCP shape: an object with a `tools` array of `name` / `description` / `inputSchema`, twenty-four tools on main (the six HTTP operations plus `xerj_status`, `xerj_def`, `xerj_batch_search`, `xerj_brain_ego`, `xerj_brain_link`, `xerj_brain_unlink`, `xerj_brain_overview`, `xerj_map`, `xerj_code_search`, `xerj_plan`, `xerj_index_budget`, `xerj_autoindex_remove`, `xerj_sources` (ships in rc.102), `xerj_field_report`, `xerj_corpus_feedback`, `xerj_hub_find`, `xerj_hub_def`, `xerj_hub_ask`), generated from a real `tools/list` of the server that serves it. The rc.101 release serves 23 (24 with `--facts-model-dir`, which adds `xerj_facts_ask`). `xerj_map` reads the autoindex catalog over HTTP; `xerj_plan` proxies `POST /_ask` (below); `xerj_code_search` needs the reference-coding corpora indexed; `xerj_index_budget` counts a folder and estimates the index against the node's flood-stage budget before `xerj autoindex` hashes anything, and does not index; `xerj_field_report` files an agent field report (GitHub PR first, the `/api/field-report` endpoint when GitHub is unavailable). A binary with no hub key omits the three hub tools (21 tools on main, 20 on rc.101). `xerj_autoindex_remove` drops one autoindexed folder after listing it and deletes nothing unless `confirm` is true",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list planner schema",
+            "P2_MAP actual output"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 404,
+              "end_line": 404,
+              "exact_text": "- [mcp-tools.json](https://xerj.org/docs/agents/schemas/mcp-tools.json): MCP shape: an object with a `tools` array of `name` / `description` / `inputSchema`, twenty-four tools on main (the six HTTP operations plus `xerj_status`, `xerj_def`, `xerj_batch_search`, `xerj_brain_ego`, `xerj_brain_link`, `xerj_brain_unlink`, `xerj_brain_overview`, `xerj_map`, `xerj_code_search`, `xerj_plan`, `xerj_index_budget`, `xerj_autoindex_remove`, `xerj_sources` (ships in rc.102), `xerj_field_report`, `xerj_corpus_feedback`, `xerj_hub_find`, `xerj_hub_def`, `xerj_hub_ask`), generated from a real `tools/list` of the server that serves it. The rc.101 release serves 23 (24 with `--facts-model-dir`, which adds `xerj_facts_ask`). `xerj_map` reads the autoindex catalog over HTTP; `xerj_plan` proxies `POST /_ask` (below); `xerj_code_search` needs the reference-coding corpora indexed; `xerj_index_budget` counts a folder and estimates the index against the node's flood-stage budget before `xerj autoindex` hashes anything, and does not index; `xerj_field_report` files an agent field report (GitHub PR first, the `/api/field-report` endpoint when GitHub is unavailable). A binary with no hub key omits the three hub tools (21 tools on main, 20 on rc.101). `xerj_autoindex_remove` drops one autoindexed folder after listing it and deletes nothing unless `confirm` is true",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list planner schema",
+            "P2_MAP actual output"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_SEARCH_PLANNED_QUERY",
+      "persona": "P2",
+      "intent": "Execute the query returned by the planner and compare with operator CLI results.",
+      "derivation": "Use only actual successful plan.query plus actual search-tool schema. Preserve planner failure; no invented alternative query. CLI comparison is separate operator work.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P2_PLAN original response ID with query",
+            "actual tools/list search schema",
+            "operator actual CLI result ID"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P2_PLAN original response ID with query",
+            "actual tools/list search schema",
+            "operator actual CLI result ID"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_HUB_OBSERVATION",
+      "persona": "P2",
+      "intent": "Observe advertised Hub tool without invoking it.",
+      "derivation": "Actual tools/list only; no remote call/pack/key/feedback. NOT_ADVERTISED or ADVERTISED_NOT_EXERCISED, never PASS.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 84,
+              "end_line": 84,
+              "exact_text": "- `xerj_hub_ask` `{\"question\": \"<your question>\"}`, optional `corpus`, `mode` (`def`, `how`, `files`), `max_tokens`",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list response ID"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 84,
+              "end_line": 84,
+              "exact_text": "- `xerj_hub_ask` `{\"question\": \"<your question>\"}`, optional `corpus`, `mode` (`def`, `how`, `files`), `max_tokens`",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "actual tools/list response ID"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P2_CLI_BOUNDARY",
+      "persona": "P2",
+      "intent": "Check that persona receives no shell and operator-only setup/accounting stays separate.",
+      "derivation": "Read only the offered setup/gain and CLI-only statements; generated registration is operator-produced. Never call mutation/removal/feedback tools.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 119,
+              "end_line": 119,
+              "exact_text": "- **xerj_autoindex** \u2014 make a folder searchable, zero config: `xerj autoindex <folder> [--url http://localhost:9200]`. **CLI-only: the one operation with no HTTP equivalent** \u2014 no `POST /_autoindex`, no trigger endpoint, no way to make a remote node walk a folder, so it must run where the files are. Detects formats mainly by content (magic bytes), with a few extension rules such as .html/.htm and template files, infers field types, PUTs explicit mappings, streams files in with idempotent `_id`s, and writes what it learned to the `autoindex-catalog` index. Junk is skipped with reasons, never fatal (exit **3** = completed-with-junk = SUCCESS).",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 26,
+              "end_line": 26,
+              "exact_text": "3. (optional, one command) `xerj init` wires XERJ into the coding agents in the project: registers the MCP server in `.mcp.json` and writes two Claude Code skills (`xerj` and `xerj-hub`) and an AGENTS.md section, with .bak backups for anything it edits. `xerj gain` later shows counted usage (searches, hit rate, latency) from the node's audit log.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 407,
+              "end_line": 407,
+              "exact_text": "- [anthropic-tools.json](https://xerj.org/docs/agents/schemas/anthropic-tools.json): Anthropic tool-use shape \u2014 an array of `{name, description, input_schema}`, the same six \u2014 the two files carry the HTTP-core search/memory surface only, by design. The folder scan behind `xerj autoindex` is CLI-only (reading the catalog it writes is HTTP \u2014 see `POST /autoindex-catalog/_search` above); the brain, map, code-search and plan tools live in the MCP registry. If you *can* run a process, `xerj mcp` is an MCP stdio server inside the same binary serving the full MCP set (23 tools on rc.101, 24 with `--facts-model-dir`); it does not start a node \u2014 point it at one you already started",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 119,
+              "end_line": 119,
+              "exact_text": "- **xerj_autoindex** \u2014 make a folder searchable, zero config: `xerj autoindex <folder> [--url http://localhost:9200]`. **CLI-only: the one operation with no HTTP equivalent** \u2014 no `POST /_autoindex`, no trigger endpoint, no way to make a remote node walk a folder, so it must run where the files are. Detects formats mainly by content (magic bytes), with a few extension rules such as .html/.htm and template files, infers field types, PUTs explicit mappings, streams files in with idempotent `_id`s, and writes what it learned to the `autoindex-catalog` index. Junk is skipped with reasons, never fatal (exit **3** = completed-with-junk = SUCCESS).",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 26,
+              "end_line": 26,
+              "exact_text": "3. (optional, one command) `xerj init` wires XERJ into the coding agents in the project: registers the MCP server in `.mcp.json` and writes two Claude Code skills (`xerj` and `xerj-hub`) and an AGENTS.md section, with .bak backups for anything it edits. `xerj gain` later shows counted usage (searches, hit rate, latency) from the node's audit log.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 407,
+              "end_line": 407,
+              "exact_text": "- [anthropic-tools.json](https://xerj.org/docs/agents/schemas/anthropic-tools.json): Anthropic tool-use shape \u2014 an array of `{name, description, input_schema}`, the same six \u2014 the two files carry the HTTP-core search/memory surface only, by design. The folder scan behind `xerj autoindex` is CLI-only (reading the catalog it writes is HTTP \u2014 see `POST /autoindex-catalog/_search` above); the brain, map, code-search and plan tools live in the MCP registry. If you *can* run a process, `xerj mcp` is an MCP stdio server inside the same binary serving the full MCP set (23 tools on rc.101, 24 with `--facts-model-dir`); it does not start a node \u2014 point it at one you already started",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_CONSOLE",
+      "persona": "P3",
+      "intent": "Read the console URL supplied by the surface and inspect actual returned content.",
+      "derivation": "GET navigation to exact documented relative console link resolved against owned listener supplied by operator; no internal knowledge endpoint or asset fetch automatically authorized.",
+      "request_template": {
+        "method": "GET",
+        "path": "/_xerj-console/",
+        "body": null
+      },
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 379,
+              "end_line": 379,
+              "exact_text": "- [Console: corpus home, reader, guest mode](https://github.com/xerj-org/xerj/blob/main/docs/CONSOLE_READER.md): when a person wants to READ what you indexed, hand them a link instead of pasting the document \u2014 `/_xerj-console/` lists every indexed dataset, and `/_xerj-console/#/reader?index=<index>&id=<_id>` opens one record (an email with its attachments, a PDF page, a note, a code symbol) beside the files the brain links it to. Extracted text only: it renders no email HTML and no PDF pages. Read-only guest mode runs on a share's scoped key. Two limits on an auth-enabled node: the operator's linked-records panel is refused (`401`) and passkey sign-in only works at `http://localhost:9200`",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "owned listener from actual operator banner ID"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 379,
+              "end_line": 379,
+              "exact_text": "- [Console: corpus home, reader, guest mode](https://github.com/xerj-org/xerj/blob/main/docs/CONSOLE_READER.md): when a person wants to READ what you indexed, hand them a link instead of pasting the document \u2014 `/_xerj-console/` lists every indexed dataset, and `/_xerj-console/#/reader?index=<index>&id=<_id>` opens one record (an email with its attachments, a PDF page, a note, a code symbol) beside the files the brain links it to. Extracted text only: it renders no email HTML and no PDF pages. Read-only guest mode runs on a share's scoped key. Two limits on an auth-enabled node: the operator's linked-records panel is refused (`401`) and passkey sign-in only works at `http://localhost:9200`",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "owned listener from actual operator banner ID"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_KNOWLEDGE",
+      "persona": "P3",
+      "intent": "Observe totals, per-dataset fields, inferred relations and capability strip if discoverable.",
+      "derivation": "No exact knowledge API route is present in any offered surface. This is a preregistered planned loss, not authority to inject the playbook endpoint.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        },
+        "candidate": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_CATALOG",
+      "persona": "P3",
+      "intent": "Read the documented self-describing autoindex catalog.",
+      "derivation": "POST exactly the documented catalog path; no guessed body fields. Empty object is the no-filter ES search body, grounded by the offered search contract. Extract dataset/field/value only from actual response.",
+      "request_template": {
+        "method": "POST",
+        "path": "/autoindex-catalog/_search",
+        "body": {}
+      },
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 140,
+              "end_line": 140,
+              "exact_text": "- `POST /autoindex-catalog/_search` \u2014 the self-describing catalog written by `xerj autoindex`. CLI equivalents: `xerj autoindex map [--json]`, `xerj autoindex status`.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "owned listener from actual operator banner ID"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 140,
+              "end_line": 140,
+              "exact_text": "- `POST /autoindex-catalog/_search` \u2014 the self-describing catalog written by `xerj autoindex`. CLI equivalents: `xerj autoindex map [--json]`, `xerj autoindex status`.",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "owned listener from actual operator banner ID"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_PROJECTED_SEARCH",
+      "persona": "P3",
+      "intent": "Issue a real projected-source search using actual catalog fields.",
+      "derivation": "Endpoint placeholder replaced only by actual catalog index. Query field/value from actual catalog; _source field selectors only existing actual fields. Preserve original zero-hit/failure.",
+      "request_template": {
+        "method": "POST",
+        "path": "/{actual_catalog_index}/_search",
+        "body": "derive query and _source from actual catalog + offered contract; do not hardcode corpus schema"
+      },
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 113,
+              "end_line": 113,
+              "exact_text": "> - **Default `_search` returns whole documents; project `_source` and ask for `_passage` to shrink it.** With no `_source`/`fields` in the request, every hit's `_source` is the complete stored document \u2014 for source files or long documents that is megabyte-scale for a handful of hits (measured: 5 hits over indexed source files = 416,630 bytes). Add `\"fields\":[\"_passage\"]` to any query (lexical, or a single semantic/kNN clause \u2014 omit it for hybrid/multi-kNN fusion, which 400s naming the fix) to get just the matching snippet \u2014 `{field,ordinal,start_offset,end_offset,text,page?}` sliced from the original field \u2014 and project `_source` (e.g. `[\"title\",\"ax_path\"]`, or `false`) to drop the rest: the same query measured 12,122 bytes that way, a 34\u00d7 reduction. `_passage` is opt-in and appears in no `_mapping` or default response, so a response that would benefit says so itself \u2014 an additive `_xerj.hints` entry carrying a ready-to-send corrected request can land ahead of `hits` when `_source` is unprojected and `_passage` wasn't requested (not on every response: a one-record JSONL hit on rc.101 carried none; it is for responses that are large without it) (never inside `hits`/`total`/`_score`, so existing ES clients are unaffected).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P3_CATALOG actual response with index/fields/values",
+            "fixed question binding"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 120,
+              "end_line": 120,
+              "exact_text": "- **xerj_search** \u2014 lexical / structured search: `POST /{index}/_search` with a standard ES body, e.g. `{\"query\":{\"match\":{\"title\":\"rust search\"}}}`. Full DSL (`match`, `match_phrase`, `term`, `terms`, `range`, `bool`, `prefix`, `wildcard`, `exists`, `ids`, `fuzzy`, `query_string`) plus `aggs`, `sort`, `from`/`size`, `_source`, `highlight`. On large documents add `\"fields\":[\"_passage\"]` and project `_source` (see Caveats).",
+              "hop": 0
+            },
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 113,
+              "end_line": 113,
+              "exact_text": "> - **Default `_search` returns whole documents; project `_source` and ask for `_passage` to shrink it.** With no `_source`/`fields` in the request, every hit's `_source` is the complete stored document \u2014 for source files or long documents that is megabyte-scale for a handful of hits (measured: 5 hits over indexed source files = 416,630 bytes). Add `\"fields\":[\"_passage\"]` to any query (lexical, or a single semantic/kNN clause \u2014 omit it for hybrid/multi-kNN fusion, which 400s naming the fix) to get just the matching snippet \u2014 `{field,ordinal,start_offset,end_offset,text,page?}` sliced from the original field \u2014 and project `_source` (e.g. `[\"title\",\"ax_path\"]`, or `false`) to drop the rest: the same query measured 12,122 bytes that way, a 34\u00d7 reduction. `_passage` is opt-in and appears in no `_mapping` or default response, so a response that would benefit says so itself \u2014 an additive `_xerj.hints` entry carrying a ready-to-send corrected request can land ahead of `hits` when `_source` is unprojected and `_passage` wasn't requested (not on every response: a one-record JSONL hit on rc.101 carried none; it is for responses that are large without it) (never inside `hits`/`total`/`_score`, so existing ES clients are unaffected).",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P3_CATALOG actual response with index/fields/values",
+            "fixed question binding"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_PROJECTION_SAVINGS",
+      "persona": "P3",
+      "intent": "Validate an advertised _savings contract.",
+      "derivation": "No _savings contract appears in any offered surface. Planned discoverability loss; incidental response data can be recorded, but does not retroactively grant schema knowledge or establish the absent public contract.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        },
+        "candidate": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_ASK",
+      "persona": "P3",
+      "intent": "Use documented root planner with actual index and grounded prompt.",
+      "derivation": "Use documented {index,prompt} and actual catalog data. Preserve 422/unsupported outcome; do not substitute facts API/model or repair with internal source.",
+      "request_template": {
+        "method": "POST",
+        "path": "/_ask",
+        "body": {
+          "index": "from actual catalog",
+          "prompt": "grounded only in actual catalog fields/values"
+        }
+      },
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P3_CATALOG actual index/fields/values"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 141,
+              "end_line": 141,
+              "exact_text": "- `POST /_ask` \u2014 natural-language filter in, VALIDATED query DSL out (`{index, prompt}` \u2192 `{query, plan[], confidence, indices[]}`): name the field the way the data does and values the index actually holds, and the returned `query` goes straight into a `_search` body. Deterministic and rule-based \u2014 not an LLM; a phrase it cannot ground in the index is a `422` that names it, never a guess. Every query it returns already passed the node's own parser.",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "P3_CATALOG actual index/fields/values"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "P3_INDEX_SCOPED_ASK",
+      "persona": "P3",
+      "intent": "Check index-scoped ask behavior when publicly discoverable.",
+      "derivation": "No index-scoped planner route appears in offered surfaces; facts-namespace routes do not authorize one. Planned loss; do not manufacture the known 404 by injecting playbook knowledge.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        },
+        "candidate": {
+          "status": "PLANNED_DISCOVERABILITY_LOSS",
+          "provenance": [],
+          "product_prerequisites": [],
+          "missing_span_behavior": "LOSS; do not execute, inject endpoint, infer an undocumented route, or repair from repo knowledge."
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    },
+    {
+      "id": "READ_OFFERED_RECIPE",
+      "persona": "P2_AND_P3",
+      "intent": "Read the same one-hop recipe offered by the short llms index.",
+      "derivation": "Exact HTML is a prospective local stand-in, not a live publication claim. Offer only decoded main-content text with recorded HTML source mapping. Do not follow its further links or execute its standalone example/schema in personas.",
+      "request_template": null,
+      "states": {
+        "baseline": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "65f2cecacf1e9fd2afd01cb6a2fa24634ccb688cd915bbb25f46dec60dc36f2c",
+              "start_line": 372,
+              "end_line": 372,
+              "exact_text": "- [Semantic search & RAG](https://xerj.org/docs/recipes/semantic-search-rag) \u00b7 [passage retrieval](https://xerj.org/docs/recipes/passage-retrieval) \u00b7 [vector search (kNN)](https://xerj.org/docs/recipes/vector-search-knn) \u00b7 [vector quantization](https://xerj.org/docs/recipes/vector-quantization) \u00b7 [hybrid search](https://xerj.org/docs/recipes/hybrid-search): one retrieval mode per recipe, each with a runnable request",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "recipe exact raw HTML SHA and visible-text mapping"
+          ],
+          "missing_span_behavior": null
+        },
+        "candidate": {
+          "status": "SPAN_AVAILABLE",
+          "provenance": [
+            {
+              "surface_id": "llms",
+              "sha256": "fe32fc0746f043e87c245b1a7cf91dabb8136268fac87f27473be50accebb54d",
+              "start_line": 372,
+              "end_line": 372,
+              "exact_text": "- [Semantic search & RAG](https://xerj.org/docs/recipes/semantic-search-rag) \u00b7 [passage retrieval](https://xerj.org/docs/recipes/passage-retrieval) \u00b7 [vector search (kNN)](https://xerj.org/docs/recipes/vector-search-knn) \u00b7 [vector quantization](https://xerj.org/docs/recipes/vector-quantization) \u00b7 [hybrid search](https://xerj.org/docs/recipes/hybrid-search): one retrieval mode per recipe, each with a runnable request",
+              "hop": 0
+            }
+          ],
+          "product_prerequisites": [
+            "recipe exact raw HTML SHA and visible-text mapping"
+          ],
+          "missing_span_behavior": null
+        }
+      },
+      "original_outcome": "UNRUN; fill runtime transcript externally, never rewrite this preregistered table."
+    }
+  ],
+  "static_absence_checks": {
+    "baseline": {
+      "P3_KNOWLEDGE": true,
+      "P3_PROJECTION_SAVINGS": true,
+      "P3_INDEX_SCOPED_ASK": true
+    },
+    "candidate": {
+      "P3_KNOWLEDGE": true,
+      "P3_PROJECTION_SAVINGS": true,
+      "P3_INDEX_SCOPED_ASK": true
+    }
+  },
+  "operator_separation": {
+    "persona_inputs": "Only these exact offered surfaces, fixed task questions, actual generated registration and prior actual product responses; operator supplies owned listener address from actual banner, not endpoint/schema facts.",
+    "operator_only": [
+      "release installation/provenance",
+      "node startup",
+      "autoindex",
+      "init",
+      "status",
+      "gain",
+      "CLI comparison",
+      "audit snapshots",
+      "cleanup",
+      "wire/token measurement"
+    ],
+    "excluded": [
+      "repo source",
+      "playbook endpoint checklist",
+      "installer text not exercised",
+      "route/spec documents",
+      "other state transcript",
+      "external Hub/feedback",
+      "unoffered schema files"
+    ],
+    "runtime_derivation_record_required": [
+      "action_id",
+      "state",
+      "surface SHA + exact span or prior actual output/message ID",
+      "selected actual tool/schema/index/field/value",
+      "exact request/response IDs",
+      "first outcome"
+    ],
+    "no_coaching": "Missing span is loss in that state and action is not executed. Product prerequisite missing/error is original loss. Do not invent values from fixed corpus filenames or source. No smarter retry."
+  },
+  "static_limitations": [
+    "This is source-span mapping, not rendered browser/pixel verification or runtime discovery proof.",
+    "Recipe HTML decoded main text ignores head/script/style/svg; no hidden attributes are persona knowledge.",
+    "No general novice comprehension claim.",
+    "Both installer omission and Hub nonexercise remain explicit symmetric losses."
+  ],
+  "corpus_question_binding": {
+    "path": "retained-evidence://co_create/20261114/xerj3016-shellless-FTX-finish-feasibility/exact-corpus-question-and-real-route-bindings.json",
+    "sha256": "fc64c935373958f804571bcf233b4f53df43975c5dadaeeea0e387e4380597df"
+  },
+  "unrun": true
+}

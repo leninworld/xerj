@@ -1,0 +1,157 @@
+---
+title: "Reciprocal Rank Fusion (RRF): what it is, when to use it"
+h1: "What is Reciprocal Rank Fusion?"
+description: "Reciprocal Rank Fusion scores a document by the sum of weight / (k + rank) across ranked lists. XERJ uses k = 60, and a captured score checks the math."
+slug: "reciprocal-rank-fusion-when-to-use"
+cluster: "Hybrid retrieval: RRF"
+question: "What is reciprocal rank fusion and when should I use it?"
+intent: "informational"
+published: "2026-08-21"
+updated: "2026-11-14"
+author: "XERJ documentation team"
+reviewer: "XERJ engineering team"
+schema_type: "TechArticle"
+structured_data: [faq]
+agent_prompt: "Act as a coding agent. Read https://xerj.org/llms.txt, run the same query through a BM25 request and a kNN request against one XERJ index, then run it once more through the hybrid clause with fusion rrf, and confirm each fused score equals the sum of 1/(60+rank) over the lists that returned the document."
+answer: "What is reciprocal rank fusion, and when should I use it? RRF scores a document by the sum of weight over k plus its rank in every list that returned it. Use it to merge BM25 and kNN results whose scores are not comparable. XERJ uses k = 60, and our captured fused score was exactly 1/61 plus 1/61."
+key_fact: "The captured fused score for document d02, ranked first in both lists, was 0.032787 with k = 60."
+key_fact_source: "capture"
+key_fact_date: "2026-08-23"
+intent_group: "retrieval research and eval"
+queries:
+  - "hybrid search bm25 + vectors local"
+commands:
+  - cmd: "curl -s -XPUT 'http://127.0.0.1:9440/eval' -H 'content-type: application/json' -d '{\"mappings\":{\"properties\":{\"doc_id\":{\"type\":\"keyword\"},\"title\":{\"type\":\"text\"},\"text\":{\"type\":\"semantic_text\"}}}}'"
+    note: "Create the judged index first. Without this step the queries below answer 404. Port 9440 is the capture's Elasticsearch-compatible listener; the default is 9200."
+  - cmd: "curl -s -XPOST 'http://127.0.0.1:9440/eval/_search' -H 'content-type: application/json' -d '{\"query\":{\"match\":{\"text\":\"car\"}},\"size\":3,\"_source\":[\"doc_id\",\"title\"]}'"
+    note: "Get the BM25 ranked list. Port 9440 is the capture's Elasticsearch-compatible listener; the default is 9200."
+  - cmd: "curl -s -XGET 'http://127.0.0.1:9440/eval/_mapping'"
+    note: "Find the companion vector field name that the kNN sub-query needs."
+  - cmd: "curl -s -XGET 'http://127.0.0.1:9440/v1/embedding/identity'"
+    note: "Name the embedder before you read any fused ranking. The capture returned backend lexical."
+links_out:
+  - "rag-without-vector-database"
+  - "improve-basic-faiss-rag-pipeline"
+  - "vector-database-vs-full-text-search"
+faq:
+  - q: "What is Reciprocal Rank Fusion?"
+    a: "Reciprocal Rank Fusion is a rank-only rule that scores each document as the sum of weight divided by k plus rank, over every list that returned it."
+  - q: "What value of k does XERJ use?"
+    a: "XERJ uses a default k of 60. Our captured fused scores match 1 divided by 60 plus rank to seven decimal places, which confirms the default."
+  - q: "Why use rank instead of score?"
+    a: "BM25 scores and cosine scores have different scales, so adding them favors whichever list produces larger numbers. Rank positions are comparable without normalization."
+  - q: "When should I use linear fusion instead?"
+    a: "Use `linear` when you want one signal to dominate and the score scales are comparable. On our 8 judged queries linear scored 0.4583 against 0.4167 for `rrf`."
+  - q: "Does RRF find documents neither list returned?"
+    a: "No. Reciprocal Rank Fusion reorders the union of the input lists. On the query `car` both judged synonyms were missing from both lists and stayed missing."
+  - q: "In what order does XERJ return documents with the same fused score?"
+    a: "In arrival order. A tie is broken by the order the documents were indexed, then by `_id`, the same rule every score-ranked page uses. The page is the same on every run and after a restart."
+  - q: "Why did my hybrid results change order after a restart?"
+    a: "Before issue #940 a tied fused score followed hash-map iteration order, which changes from one process to the next. On BEIR SciFact that changed the top 10 of 21 of 40 queries. A tie is now ordered by arrival, so the order no longer changes."
+  - q: "Can XERJ learn the fusion weights?"
+    a: "No. `fusion: \"learned\"` is rejected with an HTTP 400 at parse time. XERJ offers `rrf` and `linear` only."
+---
+
+**TL;DR** — Reciprocal Rank Fusion scores a document by the sum of `weight / (k + rank)` across every ranked list that returned it. XERJ uses a default k of 60 inside the `hybrid` clause. Our captured fused score for `d02` was 0.032787, which is exactly 1/61 plus 1/61.
+
+## The rule in one line
+
+Reciprocal Rank Fusion is a fusion rule that uses rank position and ignores the original scores. Each list contributes `weight / (k + rank)` for every document it returned, and the fused score is the sum of those contributions. Rank is 1-based, and `k` is a constant that damps the difference between the top positions.
+
+XERJ implements this as `fusion: "rrf"` inside the `hybrid` clause, with a default `k` of 60 and a per-sub-query `weight` that defaults to 1.0. The empty array below marks where the 384 floats of the query vector go.
+
+```json
+{"query":{"hybrid":{"queries":[
+  {"query":{"match":{"text":"car"}},"weight":1.0},
+  {"query":{"knn":{"field":"text_vector","k":3,"num_candidates":50,"query_vector":[]}},"weight":1.0}],
+  "fusion":"rrf"}},"size":3}
+```
+
+## A worked example you can check by hand
+
+Our capture ran the query `car` against one 20-document index on the default lexical embedder. XERJ embeds a `semantic_text` field with lexical feature hashing unless the node starts with `--embed-mode neural`. Treat this ranking as a mechanism demonstration, not a quality claim.
+
+The BM25 sub-query returned exactly 1 hit. The kNN sub-query returned 3.
+
+| list | rank 1 | rank 2 | rank 3 |
+| --- | --- | --- | --- |
+| BM25 | `d02` (3.567053) | — | — |
+| kNN | `d02` (0.710547) | `d13` (0.666096) | `d09` (0.55798) |
+
+Now add the contributions with `k` at 60 and both weights at 1.0.
+
+| document | BM25 contribution | kNN contribution | sum | XERJ returned |
+| --- | --- | --- | --- | --- |
+| `d02` | 1/61 = 0.0163934 | 1/61 = 0.0163934 | 0.0327869 | 0.032787 |
+| `d13` | none | 1/62 = 0.0161290 | 0.0161290 | 0.016129 |
+| `d09` | none | 1/63 = 0.0158730 | 0.0158730 | 0.015873 |
+
+The three sums match the captured response to seven decimal places, and the small residual is float32 rounding in the response.
+
+## A tie, and what breaks it
+
+Two documents that hold mirrored positions receive the same fused score. Our capture found one. For the query `how does the index recover after a restart`, BM25 ranked `d04` first and `d08` second, while kNN ranked `d08` first and `d04` second.
+
+| document | BM25 rank | kNN rank | sum | XERJ returned |
+| --- | --- | --- | --- | --- |
+| `d08` | 2 → 1/62 | 1 → 1/61 | 0.0325225 | 0.032522473 |
+| `d04` | 1 → 1/61 | 2 → 1/62 | 0.0325225 | 0.032522473 |
+| `d10` | deeper than rank 3 | 3 → 1/63 | 0.0312576 | 0.031257633 |
+
+Both tied documents carry the identical fused score in the response, and this capture placed `d08` first. The capture predates issue #940. At that time a tie followed hash-map iteration order, so the same request could return `d04` first after a restart.
+
+A tie is now ordered by arrival. The fused score comes first, then the order the documents were indexed (`_seq_no`, the Elasticsearch `_doc` order), then `_id`. That is the same rule every score-ranked page in XERJ uses. The page is the same on every run, after a restart, and before or after a flush. Listing the sub-queries in another order does not change an equal-weight result.
+
+Ties are frequent under this rule. A document at rank r in only one list and a document at rank r in only the other list both score `weight / (k + r)`. Over the 300 BEIR SciFact test queries on the lexical default, our run of the fixed build returned 1,509 adjacent pairs with identical fused scores in the top 100. The order of all 300 result lists was identical across a flush and two restarts.
+
+The third row is worth reading closely. The score 0.031257633 for `d10` equals 1/63 plus 1/65. Fusion therefore credited a BM25 position deeper than the 3 hits that the size-3 BM25 response showed.
+
+## When Reciprocal Rank Fusion helps
+
+Reciprocal Rank Fusion helps when the two lists disagree and both are partly right. On the restart question, BM25 alone put an irrelevant document first and kNN alone put a judged-relevant document first. The fused list kept the judged-relevant document in position 1.
+
+Across the 8 judged queries on the lexical default, precision at 3 was 0.375 for BM25 and 0.4167 for both kNN and `rrf`. Weighted `linear` fusion reached 0.4583, the best single result in the lexical run. Fusion did not beat every alternative here.
+
+## When it does not help
+
+Reciprocal Rank Fusion reorders the union of the input lists and never adds a document. On the query `car` the BM25 list held 1 document and the kNN list held 3. The fused list is a reordering of those 3.
+
+The two judged synonyms, `Automobile maintenance schedule` and `Vehicle inspection rules`, were absent from both lists and stayed absent.
+
+That is a retrieval problem, not a fusion problem. On the same query with `--embed-mode neural`, the kNN list returned all 3 judged documents and recall reached 1.0.
+
+## Tune the controls, then evaluate on held-out queries
+
+RRF is not always better than kNN alone. Compare kNN alone, equal-weight RRF,
+weighted RRF and RRF with a custom rank constant on the same judged queries.
+Keep the corpus, embedder, filters, candidate windows and final cutoff fixed.
+
+Choose weights and the fusion constant on a tuning split. Then report relevance,
+per-query regressions, missing hits, latency and cost on an untouched held-out
+split. Do not choose settings using the test judgments. Report uncertainty when
+the difference is small.
+
+Prefer kNN alone when it meets your relevance and operational requirements and
+lexical fusion adds irrelevant hits. Evaluate fusion when lexical hits recover
+relevant exact terms that the vector leg misses. If every leg misses a relevant
+document, fix retrieval or the embeddings before tuning the fusion rule.
+
+A leg's weight scales its contribution. A smaller RRF constant favors early ranks
+relative to deeper ranks. The fusion constant is not the kNN neighbor count or
+the response page size. A zero weight contributes zero; it need not remove the
+leg's hits from the union.
+
+The [hybrid recipe](https://xerj.org/docs/recipes/hybrid-search#choose-knn-or-fusion)
+provides all four request shapes and the selection procedure. Its topic vectors
+and example settings demonstrate arithmetic, not retrieval quality. The historical
+measurements on this page remain specific to their stated corpus and embedder.
+
+## No learned fusion exists
+
+The `FusionStrategy` type names three variants and XERJ serves two of them. Both `rrf` and `linear` work.
+
+XERJ rejects `fusion: "learned"` with an HTTP 400 at parse time. There is no learned or trained fusion to configure, tune or sell.
+
+## What this capture does not show
+
+The corpus is 20 documents and the judged set is 8 queries, run once each on a shared single-node host. These figures show how the arithmetic behaves, not how a production corpus ranks. The run's summary file lists every returned document and every miss.

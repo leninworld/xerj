@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "mode": "FIXED_INTERNAL_PROXY_WITH_SOURCE_OPTOUT",
+  "claudeApproved": true,
+  "rootAgreement": true,
+  "actualVerdictSHA256": "46ff6741945ef6f0b89f567d21a6f24a435864d65b3c6dc588313f3d04c97dc2",
+  "implementationSHA256": "25fc450beafea88f2587b478f1964ae8e177ae644a7d6e216b2aeced8a49982c",
+  "evidenceCaps": {
+    "mode": "FULL_PROTOCOL_PROPOSED_CAPS_V1",
+    "privateRecords": 4096,
+    "privateBytes": 805306368,
+    "publicFileBytes": 1048576,
+    "publicTotalBytes": 6291456,
+    "cliPerState": 64,
+    "rpcPerSession": 16,
+    "httpPerState": 168,
+    "forwardedPerState": 160,
+    "directHTTPPerState": 8,
+    "containmentCheckpointsPerState": 128
+  }
+}

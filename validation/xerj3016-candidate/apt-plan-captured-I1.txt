@@ -1,0 +1,13 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libjq1 libonig5
+The following NEW packages will be installed:
+  jq libjq1 libonig5
+0 upgraded, 3 newly installed, 0 to remove and 20 not upgraded.
+Need to get 365 kB of archives.
+After this operation, 1197 kB of additional disk space will be used.
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig5_6.9.8-1_arm64.deb' libonig5_6.9.8-1_arm64.deb 179104 MD5Sum:8b163cc6dcfebaa2fe406b203b0bdafe
+'http://deb.debian.org/debian-security/pool/updates/main/j/jq/libjq1_1.6-2.1%2bdeb12u3_arm64.deb' libjq1_1.6-2.1+deb12u3_arm64.deb 122140 
+'http://deb.debian.org/debian-security/pool/updates/main/j/jq/jq_1.6-2.1%2bdeb12u3_arm64.deb' jq_1.6-2.1+deb12u3_arm64.deb 64000 
